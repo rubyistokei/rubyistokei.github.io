@@ -4,7 +4,11 @@ Bundler.require
 module Rubyistokei
   class Application < Sinatra::Application
     get '/' do
-      'Rubyistokei'
+      haml :index
+    end
+
+    get '/screen.css' do
+      scss :screen
     end
   end
 end
