@@ -1,3 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .hidden {
   visibility: hidden;
+}
+
+.tokei {
+  position: absolute;
+  display: none;
+}
+
+.tokei-wrapper {
+  position: relative;
+  background-color: #555;
+  display: inline;
+}
+
+.tokei-box {
 }

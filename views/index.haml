@@ -6,11 +6,15 @@
     %script(src="/js/jquery-1.9.1.min.js")
     %script(src="/js/knockout-2.2.1.js")
     %script(src="/js/tokei.js")
+    %script(src="/js/jquery.imagesloaded.min.js")
     :css
       body { background-color: #000; color: #fff; }
 
   %body
-    %h1 Rubyistokei
-    %span(data-bind="text: hour")
-    %span(data-bind="css: colonClass")<>:
-    %span(data-bind="text: minute")
+    .tokei-wrapper
+      .tokei-box
+        %img.tokei-image
+        .tokei
+          %span(data-bind="text: hour")
+          %span(data-bind="css: colonClass")<>:
+          %span(data-bind="text: minute")
