@@ -2,8 +2,15 @@
 %html
   %head
     %link(rel="stylesheet" href="/css/screen.css" type="text/css")
+    %script(src="/js/moment.min.js")
+    %script(src="/js/jquery-1.9.1.min.js")
+    %script(src="/js/knockout-2.2.1.js")
+    %script(src="/js/tokei.js")
     :css
       body { background-color: #000; color: #fff; }
 
   %body
     %h1 Rubyistokei
+    %span(data-bind="text: hour")
+    %span(data-bind="css: colonClass")<>:
+    %span(data-bind="text: minute")
