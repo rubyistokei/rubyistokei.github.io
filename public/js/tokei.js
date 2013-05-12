@@ -43,6 +43,7 @@ jQuery(document).ready(function() {
 
   var box = $('.tokei-box');
   box.width(boxWidth).height(boxHeight);
+
   var img = $('.tokei-image');
   img.imagesLoaded(function() {
     var scaleX = boxWidth / img.width();
@@ -63,7 +64,12 @@ jQuery(document).ready(function() {
     var scale = (scaleX > scaleY) ? scaleY : scaleX;
     var wrapperHeight = boxHeight * scale;
     var wrapperWidth = boxWidth * scale;
-    box.css({zoom: scale});
+    var offsetX = (windowWidth - wrapperWidth) / scale;
+    var offsetY = (windowHeight - wrapperHeight) / scale;
+    box.css({
+      zoom: scale,
+      '-moz-transform': 'translate(-50%,-50%) scale(' + scale + ') translate(50%,50%)'
+    });
     var top  = (windowHeight - wrapperHeight) / 2;
     var left = (windowWidth  - wrapperWidth ) / 2;
     $('.tokei-wrapper').css({
