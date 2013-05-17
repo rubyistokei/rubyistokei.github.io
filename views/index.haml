@@ -7,6 +7,7 @@
     %script(src="/js/moment.min.js")
     %script(src="/js/jquery-1.9.1.min.js")
     %script(src="/js/knockout-2.2.1.js")
+    %script(src="/js/knockout.mapping-latest.js")
     %script(src="/js/tokei.js")
     %script(src="/js/jquery.imagesloaded.min.js")
     :css
@@ -14,9 +15,10 @@
 
   %body
     .tokei-wrapper
-      .tokei-box
-        %img.tokei-image(data-bind="attr: {src: url}")
-        .tokei(data-bind="style: {color: color, fontSize: size, top: top, left: left}")
-          %span(data-bind="text: hour")
-          %span(data-bind="style: {visibility: colonVisibility}")<>:
-          %span(data-bind="text: minute")
+      %div(data-bind="if: current")
+        .tokei-box(data-bind="with: current")
+          %img.tokei-image(data-bind="attr: {src: url}")
+          .tokei(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left}")
+            %span(data-bind="text: $parent.hour")
+            %span(data-bind="style: {visibility: $parent.colonVisibility}")<>:
+            %span(data-bind="text: $parent.minute")

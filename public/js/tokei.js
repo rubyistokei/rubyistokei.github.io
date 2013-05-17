@@ -1,6 +1,41 @@
 jQuery(document).ready(function() {
+  var TokeiViewModel = function(data) {
+    var self = this;
+
+    self.url = ko.observable();
+    self.tokei = ko.observable();
+
+    self.fontSize = ko.computed(function() {
+      return self.tokei().size() + 'px';
+    }, self);
+
+    self.top = ko.computed(function() {
+      return self.tokei().top() + 'px';
+    }, self);
+
+    self.left = ko.computed(function() {
+      return self.tokei().left() + 'px';
+    }, self);
+
+    self.color = ko.computed(function() {
+      return self.tokei().color();
+    }, self);
+
+    ko.mapping.fromJS(data, {}, self);
+  };
+
   var ViewModel = function() {
     var self = this;
+    var mapping = {
+      info: {
+        create: function(options) {
+          return new TokeiViewModel(options.data);
+        },
+        key: function(data) {
+          return ko.utils.unwrapObservable(data.id);
+        }
+      }
+    };
 
     self.moment = ko.observable(moment());
     setInterval(function() {
@@ -19,33 +54,23 @@ jQuery(document).ready(function() {
       return self.moment().local().second() % 2 === 0 ? 'visible' : 'hidden';
     }, self);
 
-    self.url = ko.observable();
-    self.color = ko.observable('#777');
-    self.top = ko.observable('0px');
-    self.left = ko.observable('0px');
-    self.size = ko.observable('96px');
+    self.info = ko.observableArray();
+
+    self.current = ko.computed(function() {
+      if (self.info().length === 0) {
+        return null;
+      }
+      var number = self.moment().local().minute() % self.info().length;
+      return self.info()[number];
+    }, self);
 
     self.set = function(data) {
-      self.url(data.url);
-      self.color(data.tokei.color);
-      self.top(data.tokei.top + 'px');
-      self.left(data.tokei.left + 'px');
-      self.size(data.tokei.size + 'px');
+      ko.mapping.fromJS({info: data}, mapping, self);
     };
   };
 
   var boxWidth = 1024;
   var boxHeight = 768;
-
-  var info = {
-    url: "http://farm9.staticflickr.com/8048/8376938968_167939e595_b.jpg",
-    tokei: {
-      top: 200,
-      left: 200,
-      size: 128,
-      color: '#333'
-    }
-  };
 
   var box = $('.tokei-box');
   box.width(boxWidth).height(boxHeight);
@@ -59,7 +84,6 @@ jQuery(document).ready(function() {
     var fitY = img.height() * scale;
     img.width(fitX);
     img.height(fitY);
-    $('.tokei').show();
   });
 
   var resized = function() {
@@ -92,7 +116,28 @@ jQuery(document).ready(function() {
   });
 
   var viewModel = new ViewModel();
+  var info = [{
+    id: 'june29-1',
+    url: 'http://farm9.staticflickr.com/8048/8376938968_167939e595_b.jpg',
+    tokei: {
+      top: 160,
+      left: 200,
+      size: 128,
+      color: '#333'
+    }
+  }, {
+    id: 'june29-2',
+    url: 'http://farm9.staticflickr.com/8224/8376931924_f3a3c61179_b.jpg',
+    tokei: {
+      top: 100,
+      left: 500,
+      size: 128,
+      color: '#eee'
+    }
+  }];
+
   viewModel.set(info);
+  window.vm = viewModel;
 
   ko.applyBindings(viewModel);
 });
