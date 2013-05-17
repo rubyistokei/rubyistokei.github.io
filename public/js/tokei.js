@@ -15,8 +15,8 @@ jQuery(document).ready(function() {
       return self.moment().local().format('mm');
     }, self);
 
-    self.colonClass = ko.computed(function() {
-      return self.moment().local().second() % 2 === 0 ? 'show' : 'hidden';
+    self.colonVisibility = ko.computed(function() {
+      return self.moment().local().second() % 2 === 0 ? 'visible' : 'hidden';
     }, self);
 
     self.url = ko.observable();
