@@ -15,8 +15,8 @@
   %body
     .tokei-wrapper
       .tokei-box
-        %img.tokei-image
-        .tokei
+        %img.tokei-image(data-bind="attr: {src: url}")
+        .tokei(data-bind="style: {color: color, fontSize: size, top: top, left: left}")
           %span(data-bind="text: hour")
           %span(data-bind="css: colonClass")<>:
           %span(data-bind="text: minute")

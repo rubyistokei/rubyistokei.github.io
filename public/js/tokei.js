@@ -18,6 +18,20 @@ jQuery(document).ready(function() {
     self.colonClass = ko.computed(function() {
       return self.moment().local().second() % 2 === 0 ? 'show' : 'hidden';
     }, self);
+
+    self.url = ko.observable();
+    self.color = ko.observable('#777');
+    self.top = ko.observable('0px');
+    self.left = ko.observable('0px');
+    self.size = ko.observable('96px');
+
+    self.set = function(data) {
+      self.url(data.url);
+      self.color(data.tokei.color);
+      self.top(data.tokei.top + 'px');
+      self.left(data.tokei.left + 'px');
+      self.size(data.tokei.size + 'px');
+    };
   };
 
   var boxWidth = 1024;
@@ -28,18 +42,10 @@ jQuery(document).ready(function() {
     tokei: {
       top: 200,
       left: 200,
-      size: 96,
+      size: 128,
       color: '#333'
     }
   };
-
-  $('.tokei').css({
-    top: info.tokei.top,
-    left: info.tokei.left,
-    color: info.tokei.color,
-    'font-size': info.tokei.size || 96
-  });
-  $('.tokei-image').get(0).src = info.url;
 
   var box = $('.tokei-box');
   box.width(boxWidth).height(boxHeight);
@@ -85,5 +91,8 @@ jQuery(document).ready(function() {
     resized();
   });
 
-  ko.applyBindings(new ViewModel());
+  var viewModel = new ViewModel();
+  viewModel.set(info);
+
+  ko.applyBindings(viewModel);
 });
