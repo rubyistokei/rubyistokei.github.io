@@ -64,9 +64,13 @@ jQuery(document).ready(function() {
       return self.info()[number];
     }, self);
 
-    self.set = function(data) {
-      ko.mapping.fromJS({info: data}, mapping, self);
+    self.refreshInfo = function() {
+      $.get('/data.json').done(function(data) {
+        ko.mapping.fromJS({info: data}, mapping, self);
+      });
     };
+    self.refreshInfo();
+    setInterval(self.refreshInfo, 30 * 1000);
   };
 
   var boxWidth = 1024;
@@ -116,27 +120,7 @@ jQuery(document).ready(function() {
   });
 
   var viewModel = new ViewModel();
-  var info = [{
-    id: 'june29-1',
-    url: 'http://farm9.staticflickr.com/8048/8376938968_167939e595_b.jpg',
-    tokei: {
-      top: 160,
-      left: 200,
-      size: 128,
-      color: '#333'
-    }
-  }, {
-    id: 'june29-2',
-    url: 'http://farm9.staticflickr.com/8224/8376931924_f3a3c61179_b.jpg',
-    tokei: {
-      top: 100,
-      left: 500,
-      size: 128,
-      color: '#eee'
-    }
-  }];
 
-  viewModel.set(info);
   window.vm = viewModel;
 
   ko.applyBindings(viewModel);
