@@ -125,7 +125,5 @@ jQuery(document).ready(function() {
 
   var viewModel = new ViewModel();
 
-  window.vm = viewModel;
-
   ko.applyBindings(viewModel);
 });
