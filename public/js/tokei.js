@@ -42,16 +42,20 @@ jQuery(document).ready(function() {
       self.moment(moment());
     }, 1000);
 
+    self.local = ko.computed(function() {
+      return self.moment().local();
+    }, self);
+
     self.hour = ko.computed(function() {
-      return self.moment().local().format('HH');
+      return self.local().format('HH');
     }, self);
 
     self.minute = ko.computed(function() {
-      return self.moment().local().format('mm');
+      return self.local().format('mm');
     }, self);
 
     self.colonVisibility = ko.computed(function() {
-      return self.moment().local().second() % 2 === 0 ? 'visible' : 'hidden';
+      return self.local().second() % 2 === 0 ? 'visible' : 'hidden';
     }, self);
 
     self.info = ko.observableArray();
@@ -60,7 +64,7 @@ jQuery(document).ready(function() {
       if (self.info().length === 0) {
         return null;
       }
-      var number = self.moment().local().minute() % self.info().length;
+      var number = self.local().minute() % self.info().length;
       return self.info()[number];
     }, self);
 
