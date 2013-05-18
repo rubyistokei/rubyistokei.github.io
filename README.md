@@ -13,7 +13,7 @@ So, we kindly ask you to add your ruby heroes to this project. Instruction follo
 ## How to add a ruby hero?
 
 1. Obtain permissions from both of the rubyist and the photographer (if you are not of them).
-2. Create metadata for the rubyist under (data directory)[https://github.com/darashi/rubyistokei/tree/master/data].
+2. Create metadata for the rubyist under [data directory](https://github.com/darashi/rubyistokei/tree/master/data).
 3. Send pull request.
 
 ## Hits
