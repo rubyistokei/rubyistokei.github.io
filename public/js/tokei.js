@@ -38,6 +38,8 @@ jQuery(document).ready(function() {
       }
     };
 
+    self.id = ko.observable();
+
     self.moment = ko.observable(moment());
     setInterval(function() {
       self.moment(moment());
@@ -62,11 +64,22 @@ jQuery(document).ready(function() {
     self.info = ko.observableArray();
 
     self.current = ko.computed(function() {
-      if (self.info().length === 0) {
+      var list = self.info();
+      if (list.length === 0) {
         return null;
       }
-      var number = self.local().minute() % self.info().length;
-      return self.info()[number];
+      var number = self.local().minute() % list.length;
+
+      if (self.id()) {
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].id() === self.id()) {
+            number = i;
+            break;
+          }
+        }
+      }
+
+      return list[number];
     }, self);
 
     self.refreshInfo = function() {
@@ -143,5 +156,7 @@ jQuery(document).ready(function() {
   };
 
   var viewModel = new ViewModel();
+  var id = location.hash.replace(/^#/, '');
+  viewModel.id(id);
   ko.applyBindings(viewModel);
 });
