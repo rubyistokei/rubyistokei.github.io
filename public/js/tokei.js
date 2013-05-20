@@ -118,7 +118,6 @@ jQuery(document).ready(function() {
       var value = ko.utils.unwrapObservable(valueAccessor());
 
       var img = $('img.tokei-image', element).eq(0);
-      window.img = img;
       if (value) {
         var url = value.url();
         var src = img.attr('src');
