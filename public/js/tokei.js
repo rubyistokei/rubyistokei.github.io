@@ -132,7 +132,6 @@ jQuery(document).ready(function() {
             var fitY = img.height() * scale;
             img.width(fitX);
             img.height(fitY);
-            console.log("IMAGE SCALE", scale);
           });
         }
       }
