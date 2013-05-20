@@ -77,7 +77,7 @@ jQuery(document).ready(function() {
     setInterval(self.refreshInfo, 30 * 1000);
   };
 
-  var boxWidth = 1024;
+  var boxWidth = 800;
   var boxHeight = 768;
 
   ko.bindingHandlers['tokei'] = {
@@ -127,10 +127,10 @@ jQuery(document).ready(function() {
             var scaleX = boxWidth / img.width();
             var scaleY = boxHeight / img.height();
             var scale = (scaleX > scaleY) ? scaleY : scaleX;
-            var fitX = img.width() * scale;
-            var fitY = img.height() * scale;
-            img.width(fitX);
-            img.height(fitY);
+            var fitWidth = img.width() * scale;
+            var fitHeight = img.height() * scale;
+            img.width(fitWidth);
+            img.height(fitHeight);
           });
         }
       }
