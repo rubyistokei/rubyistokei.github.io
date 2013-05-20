@@ -20,3 +20,9 @@
             %span(data-bind="text: $parent.hour")
             %span(data-bind="style: {visibility: $parent.colonVisibility}")<>:
             %span(data-bind="text: $parent.minute")
+          .info-wrapper
+            .info-box
+              .header
+                %strong.name(data-bind="text: name")
+                %span.title(data-bind="text: title")
+              .bio(data-bind="text: bio")
