@@ -19,7 +19,7 @@
         .tokei-box
           %img.tokei-image
           %div(data-bind="with: current")
-            .tokei(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left}")
+            .tokei-text(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left}")
               %span(data-bind="text: $parent.hour")
               %span(data-bind="style: {visibility: $parent.colonVisibility}")<>:
               %span(data-bind="text: $parent.minute")
