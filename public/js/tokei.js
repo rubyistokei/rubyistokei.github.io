@@ -77,41 +77,34 @@ jQuery(document).ready(function() {
     setInterval(self.refreshInfo, 30 * 1000);
   };
 
-  var boxWidth = 1024;
-  var boxHeight = 768;
+  var boundingWidth = 1024;
+  var boundingHeight = 1024;
+
+  var resize = function(element) {
+    var box = $('.tokei-box', element);
+
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
+    var scaleX = windowWidth / box.width();
+    var scaleY = windowHeight / box.height();
+    var scale = Math.min(scaleX, scaleY);
+    var fitWidth = box.width() * scale;
+    var fitHeight = box.height() * scale;
+    var top  = (windowHeight - fitHeight) / scale / 2;
+    var left = (windowWidth  - fitWidth ) / scale / 2;
+    box.css({
+      zoom: scale,
+      '-moz-transform': 'translate(-50%,-50%) scale(' + scale + ') translate(50%,50%)',
+      marginTop: top,
+      marginLeft: left
+    });
+  };
 
   ko.bindingHandlers['tokei'] = {
     init: function(element, valueAccesor, allBindingsAccessor) {
-      var resized = function() {
-        var box = $('.tokei-box', element);
-        box.width(boxWidth).height(boxHeight);
-
-        var windowWidth = $(window).width();
-        var windowHeight = $(window).height();
-        var scaleX = windowWidth / boxWidth;
-        var scaleY = windowHeight / boxHeight;
-        var scale = Math.min(scaleX, scaleY);
-        var wrapperHeight = boxHeight * scale;
-        var wrapperWidth = boxWidth * scale;
-        var offsetX = (windowWidth - wrapperWidth) / scale;
-        var offsetY = (windowHeight - wrapperHeight) / scale;
-        box.css({
-          zoom: scale,
-          '-moz-transform': 'translate(-50%,-50%) scale(' + scale + ') translate(50%,50%)'
-        });
-        var top  = (windowHeight - wrapperHeight) / 2;
-        var left = (windowWidth  - wrapperWidth ) / 2;
-        $('.tokei-wrapper', element).css({
-          top: top,
-          left: left,
-          height: wrapperHeight,
-          width: wrapperWidth
-        });
-      };
-
-      resized();
+      resize(element);
       $(window).resize(function() {
-        resized();
+        resize(element);
       });
     },
     update: function(element, valueAccessor) {
@@ -129,21 +122,19 @@ jQuery(document).ready(function() {
 
             var originalWidth = image.width;
             var originalHeight = image.height;
-            var scaleX = boxWidth / originalWidth;
-            var scaleY = boxHeight / originalHeight;
+            var scaleX = boundingWidth / originalWidth;
+            var scaleY = boundingHeight / originalHeight;
             var scale = Math.min(scaleX, scaleY);
             var fitWidth = originalWidth * scale;
             var fitHeight = originalHeight * scale;
-            var left = (boxWidth - originalWidth) / 2;
-            var top = (boxHeight - originalHeight) / 2;
             $(image).css({
-              paddingTop: top,
-              paddingLeft: left,
               width: fitWidth,
               height: fitHeight
             });
             $(image).addClass('tokei-image');
             $('.tokei-box', element).append(image);
+            $('.tokei-box', element).width(fitWidth).height(fitHeight);
+            resize();
           };
         }
       }
