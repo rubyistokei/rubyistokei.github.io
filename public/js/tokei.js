@@ -122,10 +122,13 @@ jQuery(document).ready(function() {
         var url = value.url();
         var src = img.attr('src');
         if (url !== src) {
-          img.attr('src', url);
-          img.imagesLoaded(function() {
-            var originalWidth = img.width();
-            var originalHeight = img.height();
+          var image = new Image();
+          image.src = url;
+          image.onload = function() {
+            $('img.tokei-image', element).remove();
+
+            var originalWidth = image.width;
+            var originalHeight = image.height;
             var scaleX = boxWidth / originalWidth;
             var scaleY = boxHeight / originalHeight;
             var scale = Math.min(scaleX, scaleY);
@@ -133,13 +136,15 @@ jQuery(document).ready(function() {
             var fitHeight = originalHeight * scale;
             var left = (boxWidth - originalWidth) / 2;
             var top = (boxHeight - originalHeight) / 2;
-            $(img).css({
+            $(image).css({
               paddingTop: top,
               paddingLeft: left,
               width: fitWidth,
               height: fitHeight
             });
-          });
+            $(image).addClass('tokei-image');
+            $('.tokei-box', element).append(image);
+          };
         }
       }
     }
