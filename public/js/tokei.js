@@ -124,13 +124,21 @@ jQuery(document).ready(function() {
         if (url !== src) {
           img.attr('src', url);
           img.imagesLoaded(function() {
-            var scaleX = boxWidth / img.width();
-            var scaleY = boxHeight / img.height();
+            var originalWidth = img.width();
+            var originalHeight = img.height();
+            var scaleX = boxWidth / originalWidth;
+            var scaleY = boxHeight / originalHeight;
             var scale = Math.min(scaleX, scaleY);
-            var fitWidth = img.width() * scale;
-            var fitHeight = img.height() * scale;
-            img.width(fitWidth);
-            img.height(fitHeight);
+            var fitWidth = originalWidth * scale;
+            var fitHeight = originalHeight * scale;
+            var left = (boxWidth - originalWidth) / 2;
+            var top = (boxHeight - originalHeight) / 2;
+            $(img).css({
+              paddingTop: top,
+              paddingLeft: left,
+              width: fitWidth,
+              height: fitHeight
+            });
           });
         }
       }
