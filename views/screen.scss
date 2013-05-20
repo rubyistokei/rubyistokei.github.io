@@ -13,3 +13,29 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+.info-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #eee;
+  width: 100%;
+}
+
+.info-box {
+  margin: 10px;
+}
+
+.bio {
+  font-size: 16px;
+}
+
+.title {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.name {
+  font-size: 24px;
+}
