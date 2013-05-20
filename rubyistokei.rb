@@ -6,7 +6,7 @@ require 'json'
 
 class Database
   def initialize(path)
-    @data = Dir[File.join(path, '*.yaml')].map do |yaml_path|
+    @data = Dir[File.join(path, '*.yaml')].sort.map do |yaml_path|
       YAML.load_file(yaml_path)
     end
   end
