@@ -6,11 +6,9 @@ jQuery(document).ready(function() {
     self.tokei = ko.observable();
     self.bio = ko.observable()
     self.name = ko.observable();
-    self.title = ko.observable()
+    self.title = ko.observable();
 
-    self.fontSize = ko.computed(function() {
-      return self.tokei().size() + 'px';
-    }, self);
+    self.fontSize = ko.observable('128px');
 
     self.top = ko.computed(function() {
       return self.tokei().top() + 'px';
