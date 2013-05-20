@@ -77,7 +77,7 @@ jQuery(document).ready(function() {
     setInterval(self.refreshInfo, 30 * 1000);
   };
 
-  var boxWidth = 800;
+  var boxWidth = 1024;
   var boxHeight = 768;
 
   ko.bindingHandlers['tokei'] = {
