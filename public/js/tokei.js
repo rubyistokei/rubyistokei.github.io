@@ -90,7 +90,7 @@ jQuery(document).ready(function() {
         var windowHeight = $(window).height();
         var scaleX = windowWidth / boxWidth;
         var scaleY = windowHeight / boxHeight;
-        var scale = (scaleX > scaleY) ? scaleY : scaleX;
+        var scale = Math.min(scaleX, scaleY);
         var wrapperHeight = boxHeight * scale;
         var wrapperWidth = boxWidth * scale;
         var offsetX = (windowWidth - wrapperWidth) / scale;
@@ -126,7 +126,7 @@ jQuery(document).ready(function() {
           img.imagesLoaded(function() {
             var scaleX = boxWidth / img.width();
             var scaleY = boxHeight / img.height();
-            var scale = (scaleX > scaleY) ? scaleY : scaleX;
+            var scale = Math.min(scaleX, scaleY);
             var fitWidth = img.width() * scale;
             var fitHeight = img.height() * scale;
             img.width(fitWidth);
