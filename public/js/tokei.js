@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
 
     self.url = ko.observable();
     self.tokei = ko.observable();
-    self.bio = ko.observable()
+    self.bio = ko.observable();
     self.name = ko.observable();
     self.title = ko.observable();
 
