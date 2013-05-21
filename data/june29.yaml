@@ -1,9 +1,9 @@
-url: 'http://farm9.staticflickr.com/8048/8376938968_167939e595_b.jpg'
+url: 'http://farm9.staticflickr.com/8529/8462230688_d68676a968_b.jpg'
 tokei:
-  top: 160
-  left: 200
-  color: '#333'
+  top: 80
+  left: 600
+  color: '#eee'
 name: 'Jun Ohwada'
 title: '@june29, RubyKaigi 2013 Team'
-bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare sagittis magna, ut accumsan urna dignissim sit amet. Cras vehicula nunc non lorem blandit porttitor.'
-taken_by: 'Kei Shiratsuchi'
+bio: 'He is an author of Rubyistokei.'
+taken_by: 'Shota Fukumori'
