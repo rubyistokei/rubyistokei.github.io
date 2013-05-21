@@ -1,19 +1,19 @@
 # Rubyistokei
 
-Introduce your ruby heroes with the clock!
+Introduce your Ruby heroes with the clock!
 
 ## What is this?
 
-Rubyistokei is a web application to show a clock of rubyists, by rubyists, for rubyists. You can introduce your ruby heroes to the world with the clock. "Tokei" (時計) means "clock" in Japanese.
+Rubyistokei is a web application to show a clock of Rubyists, by Rubyists, for Rubyists. You can introduce your Ruby heroes to the world with the clock. "Tokei" (時計) means "clock" in Japanese.
 
-Rubyistokei shows rubyists every minute. We want to help rubyists to know rubyists each other by sight. Rubyistokei will be displayed during RubyKaigi 2013 in the venue.
+Rubyistokei shows Rubyists every minute. We want to help Rubyists to know Rubyists each other by sight. Rubyistokei will be displayed during RubyKaigi 2013 in the venue.
 
-So, we kindly ask you to add your ruby heroes to this project. Instruction follows.
+So, we kindly ask you to add your Ruby heroes to this project. Instruction follows.
 
-## How to add a ruby hero?
+## How to add a Ruby hero?
 
-1. Obtain permissions from both of the rubyist and the photographer (if you are not of them).
-2. Create metadata for the rubyist under [data directory](https://github.com/darashi/rubyistokei/tree/master/data).
+1. Obtain permissions from both of the Rubyist and the photographer (if you are not of them).
+2. Create metadata for the Rubyist under [data directory](https://github.com/darashi/rubyistokei/tree/master/data).
 3. Send pull request.
 
 ## Hits
