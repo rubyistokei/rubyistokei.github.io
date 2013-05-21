@@ -25,4 +25,8 @@
               .header
                 %strong.name(data-bind="text: name")
                 %span.title(data-bind="text: title")
-              .bio(data-bind="text: bio")
+              .body
+                %span.bio(data-bind="text: bio")
+                %span.taken-by
+                  %span &mdash; Photo taken by
+                  %strong(data-bind="text: taken_by")

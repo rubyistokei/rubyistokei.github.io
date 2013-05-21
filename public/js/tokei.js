@@ -7,6 +7,7 @@ jQuery(document).ready(function() {
     self.bio = ko.observable();
     self.name = ko.observable();
     self.title = ko.observable();
+    self.taken_by = ko.observable();
 
     self.fontSize = ko.observable('128px');
 
