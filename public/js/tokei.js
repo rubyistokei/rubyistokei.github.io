@@ -52,11 +52,11 @@ jQuery(document).ready(function() {
 
     self.hour = ko.computed(function() {
       return self.local().format('HH');
-    }, self);
+    }, self).extend({notifyOnlyChanged: true});
 
     self.minute = ko.computed(function() {
       return self.local().format('mm');
-    }, self);
+    }, self).extend({notifyOnlyChanged: true});
 
     self.colonVisibility = ko.computed(function() {
       return self.local().second() % 2 === 0 ? 'visible' : 'hidden';
@@ -81,7 +81,7 @@ jQuery(document).ready(function() {
       }
 
       return list[number];
-    }, self);
+    }, self).extend({notifyOnlyChanged: true});
 
     self.refreshInfo = function() {
       $.get('/data.json').done(function(data) {
@@ -154,6 +154,22 @@ jQuery(document).ready(function() {
         }
       }
     }
+  };
+
+  ko.extenders.notifyOnlyChanged = function(target) {
+    var lastValue = ko.observable();
+    var result = ko.computed(function() {
+      return lastValue();
+    });
+
+    lastValue(target());
+    target.subscribe(function() {
+      if (target() !== lastValue()) {
+        lastValue(target());
+      }
+    });
+
+    return result;
   };
 
   var viewModel = new ViewModel();
