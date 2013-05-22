@@ -2,6 +2,8 @@
 
 Introduce your Ruby heroes with the clock!
 
+[![Build Status](https://travis-ci.org/darashi/rubyistokei.png)](https://travis-ci.org/darashi/rubyistokei)
+
 ## What is this?
 
 Rubyistokei is a web application to show a clock of Rubyists, by Rubyists, for Rubyists. You can introduce your Ruby heroes to the world with the clock. "Tokei" (時計) means "clock" in Japanese.
