@@ -69,7 +69,7 @@ jQuery(document).ready(function() {
       if (list.length === 0) {
         return null;
       }
-      var number = self.local().minute() % list.length;
+      var number = Math.floor(self.moment().unix() / 60) % list.length;
 
       if (self.id()) {
         for (var i = 0; i < list.length; i++) {
