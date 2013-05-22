@@ -5,6 +5,7 @@
     %link(rel="stylesheet" href="/css/normalize.css" type="text/css")
     %link(rel="stylesheet" href="/css/screen.css" type="text/css")
     %link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" type="text/css")
+    %script(src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js")
     %script(src="/js/moment.min.js")
     %script(src="/js/jquery-1.9.1.min.js")
     %script(src="/js/knockout-2.2.1.js")
@@ -17,7 +18,7 @@
     %div(data-bind="tokei: current")
       .tokei-box
         %div(data-bind="with: current")
-          .tokei-text(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left}")
+          .tokei-text(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left, fontFamily: fontFamily}")
             %span(data-bind="text: $parent.hour")
             %span(data-bind="style: {visibility: $parent.colonVisibility}")<>:
             %span(data-bind="text: $parent.minute")
