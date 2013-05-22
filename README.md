@@ -19,7 +19,7 @@ So, we kindly ask you to add your Ruby heroes to this project. Instruction follo
 ## Hits
 
 * The image is once scaled to be the long side of the image to 1024px, rendered the clock and bio, then rescaled to fit with the screen size.
-* You need to restart server to reload database.
+* You need to restart server to reload database. [Shotgun](https://github.com/rtomayko/shotgun) may help you.
 * You can fix the hero by specifying id in url hash. `http://localhost:9292/#person` will always show the person having id `person`. Useful for creating data.
 
 ## Any problem?
