@@ -23,6 +23,21 @@ jQuery(document).ready(function() {
       return self.tokei().color();
     }, self);
 
+    self.fontFamily = ko.computed(function() {
+      if (self.tokei().font) {
+        var fontName = self.tokei().font();
+        WebFont.load({
+          google: {
+            families: [fontName]
+          }
+        });
+        return fontName;
+      } else {
+        return 'Open Sans';
+      }
+    }, self);
+
+
     ko.mapping.fromJS(data, {}, self);
   };
 
