@@ -1,14 +1,14 @@
 url:
-  'http://farm9.staticflickr.com/8450/8000087699_54f126ddc1_b.jpg'
+  'http://farm9.staticflickr.com/8488/8171962512_8cc59706fc_b.jpg'
 tokei:
-  top: '430'
-  left: '340'
-  color: '#efefef'
+  top: '300'
+  left: '630'
+  color: '#eee'
 name:
   'Masatoshi SEKI'
 title:
-  '@m_seki the philanthropist'
+  '@m_seki at RubyConf 2012 w/ Makoto Inoue'
 bio:
   'Author of ERB, dRuby, Rinda, Drip and The dRuby Book.'
 taken_by:
-  'Koichiroo Ohba'
+  '@igaiga555'
