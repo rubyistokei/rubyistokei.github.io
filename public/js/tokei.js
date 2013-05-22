@@ -89,7 +89,7 @@ jQuery(document).ready(function() {
       });
     };
     self.refreshInfo();
-    setInterval(self.refreshInfo, 30 * 1000);
+    setInterval(self.refreshInfo, 60 * 1000);
   };
 
   var boundingWidth = 1024;
