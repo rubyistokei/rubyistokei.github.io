@@ -1,0 +1,14 @@
+url:
+  'http://farm5.staticflickr.com/4143/4933401693_f8913f0490_b.jpg'
+tokei:
+  top: '350'
+  left: '80'
+  color: '#eee'
+name:
+  'Yusuke Endoh'
+title:
+  '@mametter at RubyKaigi 2010'
+bio:
+  'A Ruby 2.0 release manager, Mr.Quine, An expert of Esoteric and Obfuscated Ruby Programming'
+taken_by:
+  'Naoto Takai'
