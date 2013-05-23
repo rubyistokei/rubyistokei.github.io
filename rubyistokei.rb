@@ -19,6 +19,8 @@ end
 module Rubyistokei
   class Application < Sinatra::Application
     configure do
+      set :protection, :except => :frame_options
+
       data_path = File.join(__dir__, 'data')
       database = Database.new(data_path)
       DATA_JSON = JSON.dump(database.data)
