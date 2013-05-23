@@ -1,0 +1,14 @@
+url:
+  'https://pbs.twimg.com/media/A3II11lCEAAEoO7.jpg:large'
+tokei:
+  top: '30'
+  left: '20'
+  color: '#eee'
+name:
+  '#shibuyarblunch'
+title:
+  'Rubyist Lunch at Shibuya w/ drbrain'
+bio:
+  '#shibuyarblunch'
+taken_by:
+  'Eric Hodel'
