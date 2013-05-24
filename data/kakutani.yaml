@@ -1,0 +1,15 @@
+url:
+  'http://farm9.staticflickr.com/8242/8564681844_a8bbfe18f4_b.jpg'
+tokei:
+  top: '200'
+  left: '30'
+  color: '#fff'
+  font: 'Prosto One'
+name:
+  'Shintaro Kakutani'
+title:
+  'RubyKaigi 2013 Organizer'
+bio:
+  'Rubyist-ist, Ruby-no-kai, Uncle Jimu(事務), esminc, tech-book translator, Asakusa.rb'
+taken_by:
+  'igaiga'
