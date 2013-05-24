@@ -4,6 +4,7 @@ tokei:
   top: '200'
   left: '10'
   color: '#a00'
+  font: 'Kranky'
 name:
   'Yuki Torii'
 title:
