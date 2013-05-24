@@ -1,9 +1,10 @@
 url:
   'http://farm7.staticflickr.com/6011/5959896791_3c4e4c1563_b.jpg'
 tokei:
-  top: '140'
+  top: '35'
   left: '660'
   color: '#4AD509'
+  font: 'Fruktur'
 name:
   'Nobuyoshi Nakada'
 title:
