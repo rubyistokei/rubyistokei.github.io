@@ -1,0 +1,15 @@
+url:
+  'http://farm9.staticflickr.com/8063/8171960696_89c863d85e_k.jpg'
+tokei:
+  top: '20'
+  left: '660'
+  color: '#fff'
+#  font: 'Prosto One'
+name:
+  'Makoto Inoue'
+title:
+  'Talking in RubyConf2012 with Masatoshi Seki.'
+bio:
+  'The dRuby Book translater. New Bamboo table tennis campion.'
+taken_by:
+  'igaiga'
