@@ -1,0 +1,15 @@
+url:
+  'http://farm7.staticflickr.com/6122/5960555253_ff3e4008da_b.jpg'
+tokei:
+  top: '400'
+  left: '30'
+  color: '#fff'
+  font: 'Prosto One'
+name:
+  'Masaya Tarui'
+title:
+  '@taru at RubyKaigi2011 after party'
+bio:
+  'Ruby Committer, Hardware researcher, Expert Windows version of Ruby'
+taken_by:
+  'koichiroo'
