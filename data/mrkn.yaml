@@ -1,0 +1,15 @@
+url:
+  'http://farm6.staticflickr.com/5050/5244581973_fe97de7b5f_b.jpg'
+tokei:
+  top: '30'
+  left: '50'
+  color: '#fff'
+  font: 'Marck Script'
+name:
+  'Kenta Murata'
+title:
+  '@mrkn at SapporoRubyKaigi03'
+bio:
+  'Ruby Committer, Ruby Mac OS X maintainer'
+taken_by:
+  'Koichiro Ohba'
