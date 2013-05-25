@@ -152,14 +152,37 @@ jQuery(document).ready(function() {
 
             var originalWidth = image.width;
             var originalHeight = image.height;
-            var scaleX = boundingWidth / originalWidth;
-            var scaleY = boundingHeight / originalHeight;
+
+            var cropTop = 0;
+            var cropLeft = 0;
+            var cropWidth = originalWidth;
+            var cropHeight = originalHeight;
+            if (value.cropbox) {
+              if (value.cropbox.top) {
+                cropTop = value.cropbox.top();
+              }
+              if (value.cropbox.left) {
+                cropLeft = value.cropbox.left();
+              }
+              if (value.cropbox.width) {
+                cropWidth = value.cropbox.width();
+              }
+              if (value.cropbox.height) {
+                cropHeight = value.cropbox.height();
+              }
+            }
+
+            var scaleX = boundingWidth / cropWidth;
+            var scaleY = boundingHeight / cropHeight;
             var scale = Math.min(scaleX, scaleY);
-            var fitWidth = originalWidth * scale;
-            var fitHeight = originalHeight * scale;
+            var fitWidth = cropWidth * scale;
+            var fitHeight = cropHeight * scale;
+
             $(image).css({
-              width: fitWidth,
-              height: fitHeight
+              top: -cropTop,
+              left: -cropLeft,
+              width: fitWidth * originalWidth / cropWidth,
+              height: fitHeight * originalHeight / cropHeight
             });
             $(image).addClass('tokei-image');
             $('.tokei-box', element).append(image);

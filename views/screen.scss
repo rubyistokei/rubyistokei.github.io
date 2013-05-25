@@ -7,12 +7,17 @@ body {
 
 .tokei-text {
   position: absolute;
+  z-index: 1;
 }
 
 .tokei-box {
   position: relative;
   overflow: hidden;
   z-index: 0;
+}
+
+img.tokei-image {
+  position: relative;
 }
 
 .info-wrapper {
@@ -22,6 +27,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   color: #eee;
   width: 100%;
+  z-index: 1;
 }
 
 .info-box {
