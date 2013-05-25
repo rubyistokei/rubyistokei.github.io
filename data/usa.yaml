@@ -1,0 +1,15 @@
+url:
+  'http://farm9.staticflickr.com/8110/8500414462_9d136c86c2_b.jpg'
+tokei:
+  top: '-50'
+  left: '600'
+  color: '#333'
+  font: 'Sigmar One'
+name:
+  'Usaku NAKAMURA'
+title:
+  'Happy Birthday!!'
+bio:
+  'Ruby committer, Ruby 1.9.3 branch maintainer, Ruby Windows versions maintainer'
+taken_by:
+  '@hsbt'
