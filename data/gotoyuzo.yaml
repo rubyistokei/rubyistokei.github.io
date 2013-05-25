@@ -1,0 +1,14 @@
+url:
+  'http://farm7.staticflickr.com/6197/6140750438_04227fcdf7_b.jpg'
+tokei:
+  top: '50'
+  left: '20'
+  color: '#FFFF'
+name:
+  'Yuuzou GOTOU'
+title:
+  '@gotoyuzo at RubyWorld Conference 2011'
+bio:
+  'Ruby Committer, WEBrick author.'
+taken_by:
+  '@koichiroo'
