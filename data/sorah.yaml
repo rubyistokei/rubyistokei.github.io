@@ -1,14 +1,14 @@
 url:
   'http://farm9.staticflickr.com/8304/8019762500_d6bcfe783e_b.jpg'
 tokei:
-  top: '200'
+  top: '8'
   left: '10'
   color: '#a00'
 name:
   'Shota Fukumori'
 title:
-  '@sora_h'
+  '@sora_h, sorah.jp'
 bio:
-  'Ruby committer'
+  'Ruby committer who loves making development faster and faster.'
 taken_by:
-  'Miio Mitani(@ayako119)'
+  'Miio Mitani (@ayako119)'
