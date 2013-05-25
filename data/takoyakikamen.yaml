@@ -1,0 +1,15 @@
+url:
+  'http://farm5.staticflickr.com/4143/4932301886_6c560c1455_b.jpg'
+tokei:
+  top: '10'
+  left: '600'
+  color: '#fff'
+  font: 'Monoton'
+name:
+  'Takoyaki Kamen'
+title:
+  '@takoyakikamen at RubyKaigi2011'
+bio:
+  'Nobody knows....'
+taken_by:
+  'hsbt'
