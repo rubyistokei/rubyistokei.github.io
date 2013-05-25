@@ -1,0 +1,15 @@
+url:
+  'http://farm7.staticflickr.com/6012/5943170085_c8d12aca6f_b.jpg'
+tokei:
+  top: '100'
+  left: '600'
+  color: '#fff'
+  font: 'Nixie One'
+name:
+  'Urabe Shyouhei'
+title:
+  '@shyouhei at RubyKaigi 2011'
+bio:
+  'Ruby Committer, Ruby 1.8.7 maintainer'
+taken_by:
+  'Naoto Takai'
