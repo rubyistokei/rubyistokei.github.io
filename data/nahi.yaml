@@ -1,0 +1,14 @@
+url:
+  'http://farm7.staticflickr.com/6022/5959897103_6e41f23df3_b.jpg'
+tokei:
+  top: '5'
+  left: '30'
+  color: '#eee'
+name:
+  'Hiroshi Nakamura'
+title:
+  '@nahi at JRubyKaigi 2011 after party w/ @nobu and @tom_enebo'
+bio:
+  'He is only the Ruby and JRuby both commiter in a world.'
+taken_by:
+  '@koichiroo'
