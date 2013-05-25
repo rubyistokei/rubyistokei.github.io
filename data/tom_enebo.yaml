@@ -1,0 +1,14 @@
+url:
+  'http://farm7.staticflickr.com/6126/5960624519_742a754a7b_b.jpg'
+tokei:
+  top: '420'
+  left: '630'
+  color: '#0000'
+name:
+  'Thomas E.Enebo'
+title:
+  '@tom_enebo at RubyKaigi 2011 w/ Matz'
+bio:
+  'JRuby core developer.'
+taken_by:
+  '@koichiroo'
