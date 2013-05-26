@@ -17,18 +17,17 @@
   %body
     %div(data-bind="tokei: current")
       .tokei-box
-        %div(data-bind="with: current")
-          .tokei-text(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left, fontFamily: fontFamily}")
-            %span(data-bind="text: $parent.hour")
-            %span(data-bind="style: {visibility: $parent.colonVisibility}")<>:
-            %span(data-bind="text: $parent.minute")
-          .info-wrapper
-            .info-box
-              .header
-                %strong.name(data-bind="text: name")
-                %span.title(data-bind="text: title")
-              .body
-                %span.bio(data-bind="text: bio")
-                %span.taken-by
-                  %span &mdash; Photo taken by
-                  %strong(data-bind="text: taken_by")
+        .tokei-text(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left, fontFamily: fontFamily}")
+          %span(data-bind="text: $parent.hour")
+          %span(data-bind="style: {visibility: $parent.colonVisibility}")<>:
+          %span(data-bind="text: $parent.minute")
+        .info-wrapper
+          .info-box
+            .header
+              %strong.name(data-bind="text: name")
+              %span.title(data-bind="text: title")
+            .body
+              %span.bio(data-bind="text: bio")
+              %span.taken-by
+                %span &mdash; Photo taken by
+                %strong(data-bind="text: taken_by")

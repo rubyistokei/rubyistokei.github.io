@@ -135,9 +135,11 @@ jQuery(document).ready(function() {
       $(window).resize(function() {
         resize(element);
       });
+      return ko.bindingHandlers['with'].init.apply(this, arguments);
     },
     update: function(element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
+      var returnValue = ko.bindingHandlers['with'].update.apply(this, arguments);
 
       var img = $('img.tokei-image', element).eq(0);
       if (value) {
@@ -190,6 +192,7 @@ jQuery(document).ready(function() {
           };
         }
       }
+      return returnValue;
     }
   };
 
