@@ -13,21 +13,23 @@
     %script(src="/js/tokei.js")
     :css
       body { background-color: #000; color: #fff; }
+    %script(type="text/html" id="tokei-template")
+      %div(data-bind="tokei: $data")
+        .tokei-box
+          .tokei-text(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left, fontFamily: fontFamily}")
+            %span(data-bind="text: $root.hour")
+            %span(data-bind="style: {visibility: $root.colonVisibility}")<>:
+            %span(data-bind="text: $root.minute")
+          .info-wrapper
+            .info-box
+              .header
+                %strong.name(data-bind="text: name")
+                %span.title(data-bind="text: title")
+              .body
+                %span.bio(data-bind="text: bio")
+                %span.taken-by
+                  %span &mdash; Photo taken by
+                  %strong(data-bind="text: taken_by")
 
   %body
-    %div(data-bind="tokei: current")
-      .tokei-box
-        .tokei-text(data-bind="style: {color: color, fontSize: fontSize, top: top, left: left, fontFamily: fontFamily}")
-          %span(data-bind="text: $parent.hour")
-          %span(data-bind="style: {visibility: $parent.colonVisibility}")<>:
-          %span(data-bind="text: $parent.minute")
-        .info-wrapper
-          .info-box
-            .header
-              %strong.name(data-bind="text: name")
-              %span.title(data-bind="text: title")
-            .body
-              %span.bio(data-bind="text: bio")
-              %span.taken-by
-                %span &mdash; Photo taken by
-                %strong(data-bind="text: taken_by")
+    %div(data-bind="template: {name: 'tokei-template', data: current}")
