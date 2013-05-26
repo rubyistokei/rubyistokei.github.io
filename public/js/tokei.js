@@ -132,7 +132,6 @@ jQuery(document).ready(function() {
 
   ko.bindingHandlers['tokei'] = {
     init: function(element, valueAccesor, allBindingsAccessor) {
-      resize(element);
       $(window).resize(function() {
         resize(element);
       });
