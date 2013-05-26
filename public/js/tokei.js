@@ -141,56 +141,51 @@ jQuery(document).ready(function() {
       var value = ko.utils.unwrapObservable(valueAccessor());
       var returnValue = ko.bindingHandlers['with'].update.apply(this, arguments);
 
-      var img = $('img.tokei-image', element).eq(0);
       if (value) {
-        var url = value.url();
-        var src = img.attr('src');
-        if (url !== src) {
-          var image = new Image();
-          image.src = url;
-          image.onload = function() {
-            $('img.tokei-image', element).remove();
+        var image = new Image();
+        image.src = value.url();
+        image.onload = function() {
+          $('img.tokei-image', element).remove();
 
-            var originalWidth = image.width;
-            var originalHeight = image.height;
+          var originalWidth = image.width;
+          var originalHeight = image.height;
 
-            var cropTop = 0;
-            var cropLeft = 0;
-            var cropWidth = originalWidth;
-            var cropHeight = originalHeight;
-            if (value.cropbox) {
-              if (value.cropbox.top) {
-                cropTop = value.cropbox.top();
-              }
-              if (value.cropbox.left) {
-                cropLeft = value.cropbox.left();
-              }
-              if (value.cropbox.width) {
-                cropWidth = value.cropbox.width();
-              }
-              if (value.cropbox.height) {
-                cropHeight = value.cropbox.height();
-              }
+          var cropTop = 0;
+          var cropLeft = 0;
+          var cropWidth = originalWidth;
+          var cropHeight = originalHeight;
+          if (value.cropbox) {
+            if (value.cropbox.top) {
+              cropTop = value.cropbox.top();
             }
+            if (value.cropbox.left) {
+              cropLeft = value.cropbox.left();
+            }
+            if (value.cropbox.width) {
+              cropWidth = value.cropbox.width();
+            }
+            if (value.cropbox.height) {
+              cropHeight = value.cropbox.height();
+            }
+          }
 
-            var scaleX = boundingWidth / cropWidth;
-            var scaleY = boundingHeight / cropHeight;
-            var scale = Math.min(scaleX, scaleY);
-            var fitWidth = cropWidth * scale;
-            var fitHeight = cropHeight * scale;
+          var scaleX = boundingWidth / cropWidth;
+          var scaleY = boundingHeight / cropHeight;
+          var scale = Math.min(scaleX, scaleY);
+          var fitWidth = cropWidth * scale;
+          var fitHeight = cropHeight * scale;
 
-            $(image).css({
-              top: -cropTop,
-              left: -cropLeft,
-              width: fitWidth * originalWidth / cropWidth,
-              height: fitHeight * originalHeight / cropHeight
-            });
-            $(image).addClass('tokei-image');
-            $('.tokei-box', element).append(image);
-            $('.tokei-box', element).width(fitWidth).height(fitHeight);
-            resize();
-          };
-        }
+          $(image).css({
+            top: -cropTop,
+            left: -cropLeft,
+            width: fitWidth * originalWidth / cropWidth,
+            height: fitHeight * originalHeight / cropHeight
+          });
+          $(image).addClass('tokei-image');
+          $('.tokei-box', element).append(image);
+          $('.tokei-box', element).width(fitWidth).height(fitHeight);
+          resize();
+        };
       }
       return returnValue;
     }
