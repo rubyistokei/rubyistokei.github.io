@@ -37,7 +37,6 @@ jQuery(document).ready(function() {
       }
     }, self);
 
-
     ko.mapping.fromJS(data, {}, self);
   };
 
@@ -91,7 +90,7 @@ jQuery(document).ready(function() {
       return null;
     });
 
-    self.current = ko.computed(function() {
+    self.tokeiForMoment = function(moment, offset) {
       var list = self.info();
       if (list.length === 0) {
         return null;
@@ -99,10 +98,21 @@ jQuery(document).ready(function() {
       if (self.pinned()) {
         return self.pinned();
       }
-      var number = Math.floor(self.moment().unix() / 60) % list.length;
+      var number = (Math.floor(moment.unix() / 60) + offset) % list.length;
 
       return list[number];
+    };
+
+    self.current = ko.computed(function() {
+      return self.tokeiForMoment(self.moment(), 0);
     }, self).extend({notifyOnlyChanged: true});
+
+    self.current.subscribe(function() {
+      var next = self.tokeiForMoment(self.moment(), 1);
+      if (next) {
+        (new Image()).src = next.url(); // try to prefetch
+      }
+    });
 
     self.refreshInfo = function() {
       $.get('/data.json').done(function(data) {
