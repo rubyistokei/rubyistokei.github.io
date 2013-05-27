@@ -5,10 +5,10 @@ tokei:
   left: '50'
   color: '#000'
 name:
-  'Miyashita Gohsuke'
+  'Gosuke Miyashita'
 title:
   '@gosukenator at RubyConf Taiwan 2012'
 bio:
-  'Technical manager at paperboy, He is author of serverspec'
+  'Technical manager at paperboy, He is an author of serverspec'
 taken_by:
   "@hsbt"
