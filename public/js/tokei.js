@@ -142,6 +142,7 @@ jQuery(document).ready(function() {
       var returnValue = ko.bindingHandlers['with'].update.apply(this, arguments);
 
       if (value) {
+        $(element).hide();
         var image = new Image();
         image.src = value.url();
         image.onload = function() {
@@ -185,7 +186,10 @@ jQuery(document).ready(function() {
           $(element).append(image);
           $(element).width(fitWidth).height(fitHeight);
           resize(element);
+          $(element).fadeIn();
         };
+      } else {
+        $(element).fadeOut();
       }
       return returnValue;
     }
