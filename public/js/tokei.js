@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
       }
     };
 
-    self.id = ko.observable();
+    self.pinnedId = ko.observable();
 
     self.moment = ko.observable(moment());
     setInterval(function() {
@@ -81,7 +81,7 @@ jQuery(document).ready(function() {
 
     self.pinned = ko.computed(function() {
       var number = 0;
-      if (self.id()) {
+      if (self.pinnedId()) {
         for (var i = 0; i < list.length; i++) {
           if (list[i].id() === self.id()) {
             return list[i];
@@ -219,6 +219,6 @@ jQuery(document).ready(function() {
 
   var viewModel = new ViewModel();
   var id = location.hash.replace(/^#/, '');
-  viewModel.id(id);
+  viewModel.pinnedId(id);
   ko.applyBindings(viewModel);
 });
