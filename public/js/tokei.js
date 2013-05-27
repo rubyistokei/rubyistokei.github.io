@@ -149,11 +149,10 @@ jQuery(document).ready(function() {
 
       if (value) {
         $(element).hide();
+        $('img.tokei-image', element).remove();
         var image = new Image();
         image.src = value.url();
         image.onload = function() {
-          $('img.tokei-image', element).remove();
-
           var originalWidth = image.width;
           var originalHeight = image.height;
 
