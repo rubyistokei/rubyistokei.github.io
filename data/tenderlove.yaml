@@ -3,7 +3,7 @@ url:
 tokei:
   top: '50'
   left: '50'
-  color: '#fff'
+  color: '#000'
 name:
   'Aaron Patterson'
 title:
