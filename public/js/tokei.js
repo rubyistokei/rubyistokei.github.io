@@ -126,9 +126,7 @@ jQuery(document).ready(function() {
   var boundingWidth = 1024;
   var boundingHeight = 1024;
 
-  var resize = function(element) {
-    var box = $(element);
-
+  var resize = function(box) {
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
     var scaleX = windowWidth / box.width();
@@ -148,18 +146,22 @@ jQuery(document).ready(function() {
 
   ko.bindingHandlers['tokei'] = {
     init: function(element, valueAccesor, allBindingsAccessor) {
+      $('.loading-box', element).hide();
       $(window).resize(function() {
-        resize(element);
+        resize($('.tokei-box', element));
       });
       return ko.bindingHandlers['with'].init.apply(this, arguments);
     },
     update: function(element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
       var returnValue = ko.bindingHandlers['with'].update.apply(this, arguments);
+      var box = $('.tokei-box', element);
+      var loading = $('.loading-box', element);
 
       if (value) {
-        $(element).hide();
-        $('img.tokei-image', element).remove();
+        loading.fadeIn();
+        box.hide();
+        $('img.tokei-image', box).remove();
         var image = new Image();
         image.src = value.url();
         image.onload = function() {
@@ -198,13 +200,14 @@ jQuery(document).ready(function() {
             height: fitHeight * originalHeight / cropHeight
           });
           $(image).addClass('tokei-image');
-          $(element).append(image);
-          $(element).width(fitWidth).height(fitHeight);
-          resize(element);
-          $(element).fadeIn();
+          box.append(image);
+          box.width(fitWidth).height(fitHeight);
+          resize(box);
+          loading.hide();
+          box.fadeIn();
         };
       } else {
-        $(element).fadeOut();
+        $(box).fadeOut();
       }
       return returnValue;
     }
