@@ -79,6 +79,7 @@ jQuery(document).ready(function() {
     self.info = ko.observableArray();
 
     self.pinned = ko.computed(function() {
+      var list = self.info();
       var number = 0;
       if (self.pinnedId()) {
         for (var i = 0; i < list.length; i++) {
