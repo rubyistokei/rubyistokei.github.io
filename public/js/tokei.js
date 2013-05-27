@@ -79,21 +79,27 @@ jQuery(document).ready(function() {
 
     self.info = ko.observableArray();
 
+    self.pinned = ko.computed(function() {
+      var number = 0;
+      if (self.id()) {
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].id() === self.id()) {
+            return list[i];
+          }
+        }
+      }
+      return null;
+    });
+
     self.current = ko.computed(function() {
       var list = self.info();
       if (list.length === 0) {
         return null;
       }
-      var number = Math.floor(self.moment().unix() / 60) % list.length;
-
-      if (self.id()) {
-        for (var i = 0; i < list.length; i++) {
-          if (list[i].id() === self.id()) {
-            number = i;
-            break;
-          }
-        }
+      if (self.pinned()) {
+        return self.pinned();
       }
+      var number = Math.floor(self.moment().unix() / 60) % list.length;
 
       return list[number];
     }, self).extend({notifyOnlyChanged: true});
