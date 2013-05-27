@@ -111,7 +111,7 @@ jQuery(document).ready(function() {
   var boundingHeight = 1024;
 
   var resize = function(element) {
-    var box = $('.tokei-box', element);
+    var box = $(element);
 
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
@@ -182,9 +182,9 @@ jQuery(document).ready(function() {
             height: fitHeight * originalHeight / cropHeight
           });
           $(image).addClass('tokei-image');
-          $('.tokei-box', element).append(image);
-          $('.tokei-box', element).width(fitWidth).height(fitHeight);
-          resize();
+          $(element).append(image);
+          $(element).width(fitWidth).height(fitHeight);
+          resize(element);
         };
       }
       return returnValue;
