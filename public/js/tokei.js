@@ -80,16 +80,15 @@ jQuery(document).ready(function() {
 
     self.pinned = ko.computed(function() {
       var list = self.info();
-      var number = 0;
       if (self.pinnedId()) {
         for (var i = 0; i < list.length; i++) {
-          if (list[i].id() === self.id()) {
+          if (list[i].id() === self.pinnedId()) {
             return list[i];
           }
         }
       }
       return null;
-    });
+    }, self);
 
     self.tokeiForMoment = function(moment, offset) {
       var list = self.info();
