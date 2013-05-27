@@ -1,0 +1,11 @@
+url:
+  'http://farm3.staticflickr.com/2780/4453331252_ddd31dae58_b.jpg'
+tokei:
+  top: 500
+  left: 650
+  color: '#111'
+  font: 'Gilda Display'
+name: 'Takeyuki Fujioka'
+title: '@xibber at SendaiRubyKaigi02'
+bio: "Ruby Committer, cgi maintainer"
+taken_by: '@koichiroo'
