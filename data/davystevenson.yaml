@@ -1,0 +1,15 @@
+url:
+  'http://farm9.staticflickr.com/8061/8179010588_cbf1d6fe95_o.jpg'
+tokei:
+  top: '200'
+  left: '135'
+  color: '#eee'
+  font: 'Denk One'
+name:
+  'Davy Stevenson'
+title:
+  '@davystevenson at RubyConf 2012'
+bio:
+  'She is a dRuby girl!'
+taken_by:
+  '@m_seki'
