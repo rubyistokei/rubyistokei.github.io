@@ -1,0 +1,15 @@
+url:
+  'http://farm7.staticflickr.com/6240/6367313427_772ce7a4c2_b.jpg'
+tokei:
+  top: '10'
+  left: '580'
+  color: '#333'
+  font: 'Prosto One'
+name:
+  'Tomoyuki Chikanaga'
+title:
+  '@nagachika at TokyuRubyKaigi04'
+bio:
+  'Ruby Committer, Ruby 2.0.0 branch maintainer, Commit Watcher, Sound.rb'
+taken_by:
+  '@koichiroo'

@@ -1,0 +1,14 @@
+url:
+  'http://hsbt.lolipop.jp/rubyistokei/DSC00150.jpg'
+tokei:
+  top: '50'
+  left: '50'
+  color: '#000'
+name:
+  'Gosuke Miyashita'
+title:
+  '@gosukenator at RubyConf Taiwan 2012'
+bio:
+  'Technical manager at paperboy, He is an author of serverspec'
+taken_by:
+  "@hsbt"

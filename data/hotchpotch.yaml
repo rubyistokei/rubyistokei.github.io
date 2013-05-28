@@ -1,0 +1,15 @@
+url:
+  'http://farm7.staticflickr.com/6143/5943180577_fbb4ca42a4_b_d.jpg'
+tokei:
+  top: '150'
+  left: '200'
+  color: '#eee'
+  font: 'Finger Paint'
+name:
+  'Yuichi Tateno'
+title:
+  'on Main Stage of RubyKaigi2011'
+bio:
+  'Rubyist, VP of Engineering at Cookpad'
+taken_by:
+  'Naoto Takai'

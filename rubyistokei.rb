@@ -3,13 +3,17 @@ Bundler.require
 
 require 'yaml'
 require 'json'
+require 'digest/sha1'
 
 class Database
   def initialize(path)
-    @data = Dir[File.join(path, '*.yaml')].sort.map do |yaml_path|
+    data_loaded = Dir[File.join(path, '*.yaml')].map do |yaml_path|
       hash = YAML.load_file(yaml_path)
       id = File.basename(yaml_path, '.yaml')
       hash.merge(id: id)
+    end
+    @data = data_loaded.sort_by do |entry|
+      Digest::SHA1.digest(entry[:id])
     end
   end
 

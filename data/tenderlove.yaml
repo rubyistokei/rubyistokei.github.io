@@ -1,0 +1,14 @@
+url:
+  'http://hsbt.lolipop.jp/rubyistokei/DSC09217.jpg'
+tokei:
+  top: '50'
+  left: '50'
+  color: '#000'
+name:
+  'Aaron Patterson'
+title:
+  '@tenderlove at RubyWorldConference2012'
+bio:
+  'Ruby Committer, Rails Core Committer, yaml maintainer'
+taken_by:
+  '@hsbt'

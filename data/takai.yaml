@@ -1,0 +1,13 @@
+url: 'http://farm5.staticflickr.com/4147/4945183309_7edf2aaef5_b.jpg'
+cropbox:
+  top: 100
+  height: 600
+tokei:
+  top: 0
+  left: 680
+  color: '#fefefe'
+  font: 'Gilda Display'
+name: 'Naoto Takai'
+title: '@takai at RubyKaigi 2010'
+bio: "Rubyist Photographer, Founder of Akasaka.rb"
+taken_by: '@koichiroo'
