@@ -3,7 +3,7 @@ url:
 tokei:
   top: '10'
   left: '40'
-  color: '#FFFFFF'
+  color: '#000000'
 name:
   'Yasushi ANDO'
 title:
