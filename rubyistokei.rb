@@ -25,9 +25,7 @@ module Rubyistokei
     configure do
       set :protection, :except => :frame_options
 
-      data_path = File.join(__dir__, 'data')
-      database = Database.new(data_path)
-      DATA_JSON = JSON.dump(database.data)
+      DATA_PATH = File.join(__dir__, 'data')
     end
 
     get '/' do
@@ -40,7 +38,8 @@ module Rubyistokei
 
     get '/data.json' do
       content_type :json
-      DATA_JSON
+      database = Database.new(DATA_PATH)
+      JSON.dump(database.data)
     end
   end
 end
