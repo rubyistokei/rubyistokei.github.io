@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3457/3732886674_9ac5b8b261_b.jpg'
+tokei:
+  top: '330'
+  left: '100'
+  color: '#00000'
+name:
+  'Mitsuhiro Takano'
+title:
+  '@takano32, at RubyKaigi 2009'
+bio:
+  'Ruby committer, IA64 maintainer'
+taken_by:
+  '@koichiroo'
