@@ -1,0 +1,11 @@
+url:
+  'https://pbs.twimg.com/media/BEUT7wmCEAEQ60-.jpg:large'
+tokei:
+  top: 150
+  left: 680
+  color: '#fcfcfc'
+  font: 'Voltaire'
+name: 'Paul McMahon'
+title: '@pwim, RubyKaigi 2013 Team'
+bio: 'Co-founder of mobalean, founder of Tokyo Rubyist Meetup. Has never used Scala.'
+taken_by: 'Unknown'
