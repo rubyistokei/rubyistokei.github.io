@@ -1,9 +1,10 @@
 url:
   'http://farm4.staticflickr.com/3809/8887030788_aaf898c227_b.jpg'
 tokei:
-  top: '50'
-  left: '50'
+  top: '750'
+  left: '400'
   color: '#F5EBEE'
+  font: 'Merriweather Sans'
 name:
   'Kenta Usami'
 title:
