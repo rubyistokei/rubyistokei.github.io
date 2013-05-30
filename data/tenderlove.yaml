@@ -1,8 +1,8 @@
 url:
   'http://hsbt.lolipop.jp/rubyistokei/DSC09217.jpg'
 tokei:
-  top: '50'
-  left: '50'
+  top: '0'
+  left: '200'
   color: '#000'
 name:
   'Aaron Patterson'
