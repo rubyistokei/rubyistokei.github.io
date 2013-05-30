@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3804/8888046674_a5b76587d8_b.jpg'
+tokei:
+  top: '20'
+  left: '590'
+  color: '#252229'
+name:
+  "Ron Evans and Adrian Zankich"
+title:
+  "Artoo, a Ruby robotics framework, flies ARDrones at RubyKaigi 2013."
+bio:
+  'Software developers at The Hybrid Group.'
+taken_by:
+  'pwim'
