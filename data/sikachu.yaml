@@ -1,0 +1,14 @@
+url:
+  'http://farm8.staticflickr.com/7405/8886873809_d812d191b2_b.jpg'
+tokei:
+  top: '-10'
+  left: '675'
+  color: 'black'
+name:
+  "Prem Sichanugrist"
+title:
+  'at RubyKaigi 2013'
+bio:
+  '@sikachu is a developer at thoughtbot and Ruby on Rails contributor.'
+taken_by:
+  'pwim'
