@@ -1,0 +1,14 @@
+url:
+  'http://farm9.staticflickr.com/8129/8890815834_947d0bfe1b_b.jpg'
+tokei:
+  top: '400'
+  left: '650'
+  color: '#eee'
+name:
+  'Yukihiro "Matz" Matsumoto'
+title:
+  'Keynote at RubyKaigi 2013'
+bio:
+  'Ruby Creator, Title Collector'
+taken_by:
+  'Naoto Takai'

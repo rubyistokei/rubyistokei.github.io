@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3768/8890230607_4de0873f85_b.jpg'
+tokei:
+  top: '20'
+  left: '50'
+  color: '#eee'
+name:
+  'Koichi Sasada'
+title:
+  '"Toward efficient Ruby 2.1", RubyKaigi 2013'
+bio:
+  'Ruby Core Team, Heroku'
+taken_by:
+  'Naoto Takai'
