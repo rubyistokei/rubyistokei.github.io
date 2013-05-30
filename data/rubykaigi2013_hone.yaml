@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3721/8890240131_07f9d6e9fa_b.jpg'
+tokei:
+  top: '20'
+  left: '50'
+  color: '#eee'
+name:
+  'Terence Lee'
+title:
+  '"`bundle install` Y U SO SLOW: Server Edition", RubyKaigi 2013'
+bio:
+  'Heroku / Señor Ruby Engineer'
+taken_by:
+  'Naoto Takai'
