@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3809/8887030788_aaf898c227_b.jpg'
+tokei:
+  top: '50'
+  left: '50'
+  color: '#F5EBEE'
+name:
+  'Kenta Usami'
+title:
+  'at RubyKaigi 2013'
+bio:
+  '@tadsan is staff at RubyKaigi 2013'
+taken_by:
+  '@elim'
