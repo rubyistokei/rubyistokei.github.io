@@ -1,0 +1,15 @@
+url:
+  'http://farm9.staticflickr.com/8096/8462804169_c0b45a9481_k.jpg'
+tokei:
+  top: '30'
+  left: '60'
+  color: '#ffffff'
+  font: 'Lilita One'
+name:
+  'Satoshi Ebisawa'
+title:
+  '@satococoa at Tokyo Ruby Kaigi 10'
+bio:
+  'RubyKaja Award 2013 Winner by Yokohama.rb, P4D, RubyMotion JP'
+taken_by:
+  '@igaiga555'
