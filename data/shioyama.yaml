@@ -1,0 +1,14 @@
+url:
+  'http://farm6.staticflickr.com/5447/8885708361_bf02870289_b.jpg'
+tokei:
+  top: '400'
+  left: '620'
+  color: 'black'
+name:
+  'Chris Salzberg'
+title:
+  'at RubyKaigi 2013'
+bio:
+  '@shioyama is staff at RubyKaigi 2013.'
+taken_by:
+  'pwim'
