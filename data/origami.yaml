@@ -1,0 +1,14 @@
+url:
+  'http://farm9.staticflickr.com/8269/8887020086_7915e1fd0a_b.jpg'
+tokei:
+  top: '50'
+  left: '50'
+  color: '#F5EBEE'
+name:
+  'Minero Aoki and Shimura'
+title:
+  'Ruby "Origami" friends at RubyKaigi 2013'
+bio:
+  'Minero Aoki is author of "Ruby hacking guide", Shimura is a master of Ruby origami ;)'
+taken_by:
+  '@elim'
