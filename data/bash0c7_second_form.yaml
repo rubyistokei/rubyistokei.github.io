@@ -1,0 +1,15 @@
+url:
+  'http://farm7.staticflickr.com/6177/6213776106_ba52ffd143_b.jpg'
+tokei:
+  top: '30'
+  left: '35'
+  color: '#333'
+  font: 'Finger Paint'
+name:
+  'Toshiaki Koshiba'
+title:
+  '@bash0c7 at RubyConf2011'
+bio:
+  'Shibuya.rb Founder, hyperactive speaker'
+taken_by:
+  'sora_h'
