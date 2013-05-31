@@ -1,0 +1,6 @@
+.countdown-box(data-bind="text: $root.leftSecond")
+.control-panel
+  %a.start-button(data-bind="click: $root.timerStart" href="#")
+    start
+  %a.stop-button(data-bind="click: $root.timerStop"   href="#")
+    stop
