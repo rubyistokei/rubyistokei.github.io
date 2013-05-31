@@ -1,0 +1,14 @@
+url:
+  'http://farm6.staticflickr.com/5463/8905889818_a1384e5ede_b.jpg'
+tokei:
+  top: '400'
+  left: '650'
+  color: '#eee'
+name:
+  'nari'
+title:
+  '"Ruby''s GC 2.0", RubyKaigi 2013'
+bio:
+  'A GarbageCollector lover'
+taken_by:
+  'Naoto Takai'

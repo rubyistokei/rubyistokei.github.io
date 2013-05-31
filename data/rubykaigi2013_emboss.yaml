@@ -1,0 +1,14 @@
+url:
+  'http://farm3.staticflickr.com/2865/8905719598_25e453bb3c_b.jpg'
+tokei:
+  top: '20'
+  left: '650'
+  color: '#eee'
+name:
+  'Martin Bosslet'
+title:
+  '"krypt. semper pi.", RubyKaigi 2013'
+bio:
+  'Ruby core team, the author of krypt'
+taken_by:
+  'Naoto Takai'
