@@ -1,0 +1,14 @@
+url:
+  'http://farm8.staticflickr.com/7389/8905144501_a3dfd5f0c3_b.jpg'
+tokei:
+  top: '20'
+  left: '650'
+  color: '#eee'
+name:
+  'Akira Matsuda'
+title:
+  '"Ruby on Your Rails", RubyKaigi 2013'
+bio:
+  'Rails committer, Ruby core, Asakusa.rb'
+taken_by:
+  'Naoto Takai'

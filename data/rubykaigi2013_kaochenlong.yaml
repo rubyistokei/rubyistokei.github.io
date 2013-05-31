@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3736/8905113783_7bf5170546_b.jpg'
+tokei:
+  top: '20'
+  left: '650'
+  color: '#eee'
+name:
+  'Eddie Kao'
+title:
+  '"Code Reading - Learning More about Ruby by Reading Ruby Source Code", RubyKaigi 2013'
+bio:
+  'WebConf Taiwan Co-Founder'
+taken_by:
+  'Naoto Takai'
