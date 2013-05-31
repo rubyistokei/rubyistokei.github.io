@@ -159,7 +159,7 @@ jQuery(document).ready(function() {
       var loading = $('.loading-box', element);
 
       if (value) {
-        loading.fadeIn();
+        loading.fadeIn().css({marginTop: ($(window).height() - loading.height()) / 2});
         box.hide();
         $('img.tokei-image', box).remove();
         var image = new Image();
