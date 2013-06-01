@@ -1,0 +1,15 @@
+url:
+  'http://farm3.staticflickr.com/2817/8911068269_5e5a8a347b_b.jpg'
+tokei:
+  top: '20'
+  left: '650'
+  color: '#eee'
+name:
+  'Masatoshi Seki'
+title:
+  '"Async programming is all about programming synchronously", RubyKaigi 2013'
+bio:
+  'Artist / The author of ERB, dRuby, Rinda, Drip and The dRuby Book'
+taken_by:
+  'Naoto Takai'
+
