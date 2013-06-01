@@ -1,0 +1,15 @@
+url:
+  'http://farm8.staticflickr.com/7413/8909152362_b69c28fe69_b.jpg'
+tokei:
+  top: '0'
+  left: '650'
+  color: '#FAE8EE'
+  font: 'Merriweather Sans'
+name:
+  'Part of sendagaya.rb'
+title:
+  'at RubyKaigi 2013'
+bio:
+  'Daisuke, Jun, Naoto, Aki = %w(@nagita_ @fukajun @ppworks @akiinyo)'
+taken_by:
+  '@elim'
