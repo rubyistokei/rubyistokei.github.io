@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3757/8911710818_2bdd5e94b0_b.jpg'
+tokei:
+  top: '420'
+  left: '50'
+  color: '#eee'
+name:
+  'Jacob Burkhart'
+title:
+  '"How to fail at Background Jobs", RubyKaigi 2013'
+bio:
+  'Engine yard'
+taken_by:
+  'Naoto Takai'
