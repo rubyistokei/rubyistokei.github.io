@@ -1,0 +1,14 @@
+url:
+  'http://farm4.staticflickr.com/3762/8911739516_2ce93414bb_b.jpg'
+tokei:
+  top: '20'
+  left: '50'
+  color: '#eee'
+name:
+  'Aaron Patterson'
+title:
+  '"Unfactoring", RubyKaigi 2013'
+bio:
+  'Ruby core team, Rails core team'
+taken_by:
+  'Naoto Takai'
