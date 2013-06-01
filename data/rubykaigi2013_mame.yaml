@@ -1,0 +1,14 @@
+url:
+  'http://farm9.staticflickr.com/8416/8911103427_89e9b25e99_b.jpg'
+tokei:
+  top: '20'
+  left: '50'
+  color: '#eee'
+name:
+  'Yusuke Endoh'
+title:
+  '"TRICK (Transcendental Ruby Imbroglio Contest for rubyKaigi)", RubyKaigi 2013'
+bio:
+  'Ruby core team / Ruby 2.0.0 release manager'
+taken_by:
+  'Naoto Takai'
