@@ -1,0 +1,15 @@
+url:
+  'http://farm9.staticflickr.com/8541/8973949235_fe12a93790_b.jpg'
+tokei:
+  top: '450'
+  left: '760'
+  color: '#142D3A'
+  font: 'Marvel'
+name:
+  'Urabe Shyouhei'
+title:
+  '@shyouhei at RubyKaigi 2013 Reception Desk'
+bio:
+  'Ruby Committer, Ruby 1.8.7 maintainer'
+taken_by:
+  'Shintaro Kakutani'
