@@ -1,0 +1,15 @@
+url:
+  'http://farm9.staticflickr.com/8560/8973937049_d15556bc11_b.jpg'
+tokei:
+  top: 260
+  left: 10
+  color: '#fefefe'
+  font: 'Arimo'
+name:
+  'Minero Aoki'
+title:
+  '@mineroaoki at RubyKaigi 2013 (Welcome back!)'
+bio:
+  'Ruby Committer, Author of RHG'
+taken_by:
+  'Shintaro Kakutani'
