@@ -1,0 +1,15 @@
+url:
+  'http://farm4.staticflickr.com/3724/8911629478_3860596b45_b.jpg'
+tokei:
+  top: '50'
+  left: '600'
+  color: '#fff'
+  font: 'Prosto One'
+name:
+  'Kazuhiro NISHIYAMA'
+title:
+  '@znz, at RubyKaigi13 after party'
+bio:
+  'Ruby Committer, Typo fixer, Maintainer of nadoka-san'
+taken_by:
+  '@hsbt'
