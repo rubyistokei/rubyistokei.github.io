@@ -12,6 +12,8 @@ GEM
       rack (>= 1.0)
     rake (10.0.4)
     sass (3.2.9)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -30,5 +32,6 @@ DEPENDENCIES
   rack-test
   rake
   sass
+  shotgun
   sinatra
   thin

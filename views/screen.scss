@@ -61,3 +61,38 @@ img.tokei-image {
   text-align: center;
   color: #fff;
 }
+
+.countdown-box {
+  position: absolute;
+  left: 0;
+  top:  0;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  text-align: center;
+  color: red;
+}
+
+.control-panel {
+  position: absolute;
+  left: 32px;
+  top:  32px;
+  width: 240;
+  height: 32;
+
+  .start-button {
+    border: 1px solid green;
+    margin: 8px;
+    padding: 4px;
+    text-decoration: none;
+    color: white;
+  }
+
+  .stop-button {
+    border: 1px solid red;
+    margin: 8px;
+    padding: 4px;
+    text-decoration: none;
+    color: white;
+  }
+}
