@@ -53,16 +53,82 @@ jQuery(document).ready(function() {
       }
     };
 
-    self.pinnedId = ko.observable();
+    self.isTimerMode = function() {
+      return $('body').data('timer-mode') == 'timer';
+    }
 
     self.moment = ko.observable(moment());
-    setInterval(function() {
-      self.moment(moment());
-    }, 1000);
-
     self.local = ko.computed(function() {
       return self.moment().local();
     }, self);
+
+    if (self.isTimerMode()) {
+      self.gongedAt        = ko.observable();
+      self.timeLimit       = $('body').data('time-limit');
+      self.momentInterval  = 100 ;
+      self.refleshInterval = 30 * 1000;
+
+      self.timerStart = function() {
+        self.gongedAt(self.moment().local().add('seconds', self.timeLimit));
+      };
+
+      self.timerStop = function() {
+        self.gongedAt(null);
+        $('.countdown-box').hide();
+      };
+
+      self.timeLeft = ko.computed(function() {
+         if (self.gongedAt()) {
+           var left = self.gongedAt().diff(self.moment(), 'seconds');
+           if (0 < left && left <= 10) {
+             $('.countdown-box').show();
+           }
+           if (left < 0) {
+             self.timerStop();
+             left = 0;
+           }
+           return left;
+         } else {
+           return self.timeLimit;
+         }
+      }, self) ;
+
+      self.leftMinute = ko.computed(function() {
+        return Math.floor(self.timeLeft() / 60);
+      }, self).extend({notifyOnlyChanged: true});
+
+      self.leftSecond = ko.computed(function() {
+        return self.timeLeft() % 60;
+      }, self).extend({notifyOnlyChanged: true});
+
+      self.formattedLeftSecond = ko.computed(function() {
+        var sec = self.leftSecond();
+        if (sec < 10) {
+          sec = '0' + sec;
+        }
+        return sec;
+      }, self).extend({notifyOnlyChanged: true});
+
+      self.colonVisibility = ko.computed(function() {
+        if (self.gongedAt()) {
+          return self.local().milliseconds() > 500 ? 'visible' : 'hidden';
+        } else {
+          return 'visible';
+        }
+      }, self);
+    } else {
+      self.momentInterval  = 1000 ;
+      self.refleshInterval = 60 * 1000;
+      self.colonVisibility = ko.computed(function() {
+        return self.local().second() % 2 === 0 ? 'visible' : 'hidden';
+      }, self);
+    }
+
+    self.pinnedId = ko.observable();
+
+    setInterval(function() {
+      self.moment(moment());
+    }, self.momentInterval);
 
     self.hour = ko.computed(function() {
       return self.local().format('HH');
@@ -71,10 +137,6 @@ jQuery(document).ready(function() {
     self.minute = ko.computed(function() {
       return self.local().format('mm');
     }, self).extend({notifyOnlyChanged: true});
-
-    self.colonVisibility = ko.computed(function() {
-      return self.local().second() % 2 === 0 ? 'visible' : 'hidden';
-    }, self);
 
     self.info = ko.observableArray();
 
@@ -120,7 +182,7 @@ jQuery(document).ready(function() {
       });
     };
     self.refreshInfo();
-    setInterval(self.refreshInfo, 60 * 1000);
+    setInterval(self.refreshInfo, self.refleshInterval);
   };
 
   var boundingWidth = 1024;
@@ -146,6 +208,10 @@ jQuery(document).ready(function() {
 
   ko.bindingHandlers['tokei'] = {
     init: function(element, valueAccesor, allBindingsAccessor) {
+      if ($('.countdown-box').length > 0) {
+        $('.countdown-box').css('font-size', $(window).height());
+        $('.countdown-box').hide();
+      }
       $('.loading-box', element).hide();
       $(window).resize(function() {
         resize($('.tokei-box', element));
