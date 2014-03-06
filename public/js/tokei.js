@@ -57,6 +57,10 @@ jQuery(document).ready(function() {
       return $('body').data('timer-mode') == 'timer';
     }
 
+    self.isGongOn = function() {
+      return $('body').data('gong') == 'on';
+    }
+
     self.moment = ko.observable(moment());
     self.local = ko.computed(function() {
       return self.moment().local();
@@ -67,12 +71,21 @@ jQuery(document).ready(function() {
       self.timeLimit       = $('body').data('time-limit');
       self.momentInterval  = 100 ;
       self.refleshInterval = 30 * 1000;
+      // Original sound: http://www.freesound.org/people/cdiupe/sounds/112507/
+      self.gongAudio       = document.createElement('audio');
+      self.gongAudio.src   = 'https://dl.dropboxusercontent.com/u/171669/gong.mp3';
 
       self.timerStart = function() {
+        if (self.isGongOn()) {
+          self.gongAudio.load();
+        }
         self.gongedAt(self.moment().local().add('seconds', self.timeLimit));
       };
 
       self.timerStop = function() {
+        if (self.isGongOn()) {
+          self.gongAudio.play();
+        }
         self.gongedAt(null);
         $('.countdown-box').hide();
       };

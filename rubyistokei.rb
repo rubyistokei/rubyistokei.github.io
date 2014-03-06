@@ -37,8 +37,9 @@ module Rubyistokei
       if limit <= 0 || limit >= 100
         limit = 5
       end
+      gong_on = !params[:gong].nil?
 
-      haml :index, locals: { timer_mode: true, time_limit: limit * 60 }
+      haml :index, locals: { timer_mode: true, time_limit: limit * 60, gong_on: gong_on }
     end
 
     get '/css/screen.css' do
