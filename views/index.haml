@@ -45,5 +45,9 @@
 
         = haml :'partial/timer_control_panel' if timer_mode
 
-  %body{ data: { timer_mode: timer_mode ? 'timer' : 'tokei', time_limit: time_limit, gong: gong_on ? 'on' : 'off'} }
-    %div(data-bind="template: {name: 'tokei-template', data: current}")
+  - if timer_mode
+    %body{ data: { timer_mode: timer_mode ? 'timer' : 'tokei', time_limit: time_limit, gong: gong_on ? 'on' : 'off'} }
+      %div(data-bind="template: {name: 'tokei-template', data: current}")
+  - else
+    %body
+      %div(data-bind="template: {name: 'tokei-template', data: current}")
