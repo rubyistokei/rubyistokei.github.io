@@ -73,7 +73,7 @@ jQuery(document).ready(function() {
       self.refleshInterval = 30 * 1000;
       // Original sound: http://www.freesound.org/people/cdiupe/sounds/112507/
       self.gongAudio       = document.createElement('audio');
-      self.gongAudio.src   = 'https://dl.dropboxusercontent.com/u/171669/gong.mp3';
+      self.gongAudio.src   = '/sounds/gong.mp3';
 
       self.timerStart = function() {
         if (self.isGongOn()) {
