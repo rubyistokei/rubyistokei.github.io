@@ -1,14 +1,15 @@
 url:
-  'http://farm7.staticflickr.com/6132/5959881903_f7b19fe589_b.jpg'
+  'http://farm2.staticflickr.com/1305/5189902457_356939ff2e_b.jpg'
 tokei:
-  top: '40'
-  left: '630'
-  color: '#FFFF'
+  top: '200'
+  left: '650'
+  color: '#FFFFFF'
+  font: 'Chela One'
 name:
-  'Hiro ASARI'
+  '@hiro_asari and @jugyo'
 title:
-  '@hiro_asari at JRubyKaigi 2011'
+  'at RubyConf 2010'
 bio:
-  'JRuby core developer.'
+  'Louis Armstrong New Orleans International Airport'
 taken_by:
   '@koichiroo'
