@@ -14,6 +14,29 @@ async function getPhotos() {
   return data.photos;
 }
 
+type TokeiProps = {
+  time: Date;
+};
+
+function Tokei({ time }: TokeiProps) {
+  const [colonVisible, setColonVisible] = useState<boolean>(true);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColonVisible((prev) => !prev);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      {format(time, "HH")}
+      <span className={colonVisible ? "visible" : "invisible"}>:</span>
+      {format(time, "mm")}
+    </>
+  );
+}
+
 export default function Home() {
   const PERIOD_SEC = 10;
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -60,9 +83,11 @@ export default function Home() {
       {photo && (
         <img className="w-full h-full object-contain" src={photo.url}></img>
       )}
-      <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white text-5xl font-mono">
-        {currentTime && format(currentTime, "HH:mm")}
-      </div>
+      {currentTime && (
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white text-5xl font-mono">
+          <Tokei time={currentTime} />
+        </div>
+      )}
     </main>
   );
 }
