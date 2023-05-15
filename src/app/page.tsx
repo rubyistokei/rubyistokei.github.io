@@ -84,7 +84,7 @@ export default function Home() {
         <img className="w-full h-full object-contain" src={photo.url}></img>
       )}
       {currentTime && (
-        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white text-5xl font-mono">
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white mix-blend-difference text-[100px] font-mono font-bold">
           <Tokei time={currentTime} />
         </div>
       )}
