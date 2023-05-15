@@ -56,9 +56,13 @@ export default function Home() {
   }, [photos, currentTime]);
 
   return (
-    <main>
-      {photo && <img src={photo.url}></img>}
-      {currentTime && format(currentTime, "HH:mm:ss")}
+    <main className="w-screen h-screen overflow-hidden bg-black relative">
+      {photo && (
+        <img className="w-full h-full object-contain" src={photo.url}></img>
+      )}
+      <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white text-5xl font-mono">
+        {currentTime && format(currentTime, "HH:mm:ss")}
+      </div>
     </main>
   );
 }
