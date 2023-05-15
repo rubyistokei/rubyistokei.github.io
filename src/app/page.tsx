@@ -34,13 +34,22 @@ export default function Home() {
     })();
   }, []);
 
+  function prefetch(url: string) {
+    new Image().src = url;
+  }
+
   useEffect(() => {
     if (!currentTime) return;
 
     const numPhotos = photos.length;
-    const sec = currentTime?.getTime() / 1000;
-    const index = Math.floor(sec / PERIOD_SEC) % numPhotos;
+    if (numPhotos === 0) return;
 
+    const sec = currentTime?.getTime() / 1000;
+
+    const index = Math.floor(sec / PERIOD_SEC) % numPhotos;
+    const nextIndex = (index + 1) % numPhotos;
+
+    prefetch(photos[nextIndex].url);
     setPhoto(photos[index]);
   }, [photos, currentTime]);
 
