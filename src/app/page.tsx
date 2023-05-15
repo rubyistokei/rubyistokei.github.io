@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { format } from "date-fns";
+
 import { Photo } from "./api/photos/route";
 
 async function getPhotos() {
@@ -56,7 +58,7 @@ export default function Home() {
   return (
     <main>
       {photo && <img src={photo.url}></img>}
-      {currentTime && currentTime.toString()}
+      {currentTime && format(currentTime, "HH:mm:ss")}
     </main>
   );
 }
