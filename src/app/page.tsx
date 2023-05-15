@@ -61,7 +61,7 @@ export default function Home() {
         <img className="w-full h-full object-contain" src={photo.url}></img>
       )}
       <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white text-5xl font-mono">
-        {currentTime && format(currentTime, "HH:mm:ss")}
+        {currentTime && format(currentTime, "HH:mm")}
       </div>
     </main>
   );
