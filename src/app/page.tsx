@@ -13,14 +13,41 @@ async function getPhotos() {
 }
 
 export default function Home() {
+  const PERIOD_SEC = 10;
+  const [photos, setPhotos] = useState<Photo[]>([]);
   const [photo, setPhoto] = useState<Photo>();
+  const [currentTime, setCurrentTime] = useState<Date>();
+
+  useEffect(() => {
+    setCurrentTime(new Date());
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     (async () => {
       const photos = await getPhotos();
-      setPhoto(photos[0]);
+      setPhotos(photos);
     })();
-  });
+  }, []);
 
-  return <main>{photo && <img src={photo.url}></img>}</main>;
+  useEffect(() => {
+    if (!currentTime) return;
+
+    const numPhotos = photos.length;
+    const sec = currentTime?.getTime() / 1000;
+    const index = Math.floor(sec / PERIOD_SEC) % numPhotos;
+
+    setPhoto(photos[index]);
+  }, [photos, currentTime]);
+
+  return (
+    <main>
+      {photo && <img src={photo.url}></img>}
+      {currentTime && currentTime.toString()}
+    </main>
+  );
 }
