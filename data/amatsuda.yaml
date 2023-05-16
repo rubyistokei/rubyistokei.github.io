@@ -1,10 +1,6 @@
 url: "https://farm8.staticflickr.com/7347/8884837061_4e14e18880_b.jpg"
-tokei:
-  top: 450
-  left: 490
-  color: "#000"
-  font: "Ropa Sans"
-name: "Akira Matsuda"
-title: "@a_matsuda at RubyKaigi 2013"
-bio: "He is a Kaminari author, Ruby and Rails committer."
+rubyists:
+  - Akira Matsuda
+taken_at: "RubyKaigi 2013"
 taken_by: "Yuya Fujiwara"
+description: "Kaminari author, Ruby and Rails committer"

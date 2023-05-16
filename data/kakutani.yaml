@@ -1,10 +1,6 @@
 url: "https://farm9.staticflickr.com/8242/8564681844_a8bbfe18f4_b.jpg"
-tokei:
-  top: "200"
-  left: "30"
-  color: "#fff"
-  font: "Prosto One"
-name: "Shintaro Kakutani"
-title: "@kakutani, at Oedo RubyKaigi 03"
-bio: "RubyKaigi 2013 Organizier"
-taken_by: "igaiga"
+rubyists:
+  - Shintaro Kakutani
+taken_at: "Oedo RubyKaigi 03"
+taken_by: Kuniaki Igarashi
+description: RubyKaigi Señor Organizier

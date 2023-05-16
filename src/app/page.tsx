@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
+import { FaCamera } from "react-icons/fa";
 
 import { Photo } from "./api/photos/route";
 
@@ -36,6 +37,57 @@ function Tokei({ time }: TokeiProps) {
       {format(time, "HH")}
       <span className={colonVisible ? "visible" : "invisible"}>:</span>
       {format(time, "mm")}
+    </>
+  );
+}
+
+type PhotoProps = {
+  photo: Photo;
+};
+function Caption({ photo }: PhotoProps) {
+  const personComponents: JSX.Element[] = [];
+
+  if (photo.rubyists) {
+    const n = photo.rubyists.length;
+    photo.rubyists.forEach((rubyist, i) => {
+      personComponents.push(
+        <span key={i.toString()} className="font-bold">
+          {rubyist}
+        </span>
+      );
+      if (i < n - 2) {
+        personComponents.push(<span key={`${i}-delimiter`}>, </span>);
+      } else if (i < n - 1) {
+        personComponents.push(<span key={`${i}-delimiter`}> and </span>);
+      }
+    });
+  }
+
+  const takenComponents = [];
+  if (photo.taken_by) {
+    takenComponents.push(
+      <span key="taken-by">
+        by <span className="font-bold">{photo.taken_by}</span>{" "}
+      </span>
+    );
+  }
+  if (photo.taken_at) {
+    takenComponents.push(
+      <span key="taken-at">
+        at <span className="font-bold">{photo.taken_at}</span>
+      </span>
+    );
+  }
+
+  return (
+    <>
+      <div className="text-4xl">{personComponents}</div>
+      {photo.description && <div className="text-xl">{photo.description}</div>}
+      {takenComponents.length > 0 && (
+        <div className="text-xl">
+          <FaCamera className="inline" /> {takenComponents}
+        </div>
+      )}
     </>
   );
 }
@@ -93,6 +145,11 @@ export default function Home() {
       {currentTime && (
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white mix-blend-difference text-[100px] font-mono font-bold">
           <Tokei time={currentTime} />
+        </div>
+      )}
+      {photo && (
+        <div className="absolute bottom-0 left-0 w-full text-white bg-black bg-opacity-50 p-3">
+          <Caption photo={photo} />
         </div>
       )}
     </main>
