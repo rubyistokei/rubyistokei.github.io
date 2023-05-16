@@ -40,7 +40,7 @@ function Tokei({ time }: TokeiProps) {
 export default function Home() {
   const PERIOD_SEC = 10;
   const [photos, setPhotos] = useState<Photo[]>([]);
-  const [photo, setPhoto] = useState<Photo>();
+  const [photoIndex, setPhotoIndex] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<Date>();
 
   useEffect(() => {
@@ -59,24 +59,28 @@ export default function Home() {
     })();
   }, []);
 
+  useEffect(() => {
+    if (!currentTime) return;
+    if (photos.length === 0) return;
+
+    const sec = currentTime?.getTime() / 1000;
+
+    const index = Math.floor(sec / PERIOD_SEC) % photos.length;
+    setPhotoIndex(index);
+  }, [photos, currentTime]);
+
   function prefetch(url: string) {
     new Image().src = url;
   }
 
   useEffect(() => {
-    if (!currentTime) return;
+    if (photos.length === 0) return;
 
-    const numPhotos = photos.length;
-    if (numPhotos === 0) return;
-
-    const sec = currentTime?.getTime() / 1000;
-
-    const index = Math.floor(sec / PERIOD_SEC) % numPhotos;
-    const nextIndex = (index + 1) % numPhotos;
-
+    const nextIndex = (photoIndex + 1) % photos.length;
     prefetch(photos[nextIndex].url);
-    setPhoto(photos[index]);
-  }, [photos, currentTime]);
+  }, [photoIndex]);
+
+  const photo = photos[photoIndex];
 
   return (
     <main className="w-screen h-screen overflow-hidden bg-black relative">
