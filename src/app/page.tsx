@@ -175,12 +175,12 @@ export default function Home() {
         <img className="w-full h-full object-cover blur-2xl z-0" src={photo.url}></img>
       )}
       {currentTime && (
-        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white mix-blend-difference text-[100px] font-mono font-bold">
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white mix-blend-difference text-[100px] font-mono font-bold z-30">
           <Tokei time={currentTime} />
         </div>
       )}
       {photo && (
-        <div className="absolute bottom-0 left-0 w-full text-white bg-black bg-opacity-50 p-3">
+        <div className="absolute bottom-0 left-0 w-full text-white bg-black bg-opacity-50 p-3 z-20">
           <Caption photo={photo} />
         </div>
       )}
