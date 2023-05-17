@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 
 import { Photo } from "./api/photos/route";
 import { useUpdateChecker } from "./hooks/use-update-checker";
-import { Time } from "./components/Time";
-import { Caption } from "./components/Caption";
+import { Tokei } from "./components/Tokei";
 
 async function getPhotos() {
   const res = await fetch("/api/photos");
@@ -61,34 +60,8 @@ export default function Home() {
 
   const photo = photos[photoIndex];
 
-  return (
-    <main className="w-screen h-screen overflow-hidden bg-black relative">
-      {photo && (
-        <img
-          className="absolute top-0 left-0 w-full h-full object-contain z-10"
-          src={photo.url}
-        ></img>
-      )}
-      {photo && (
-        <img
-          className="w-full h-full object-cover blur-2xl z-0"
-          src={photo.url}
-        ></img>
-      )}
-      {photo && (
-        <div className="absolute bottom-0 left-0 w-full text-white bg-black bg-opacity-50 p-4 z-20 flex items-end gap-4">
-          <div className="grow">
-            <Caption photo={photo} />
-          </div>
-          <div className="flex-none">
-            {currentTime && (
-              <div className="text-white text-8xl font-mono font-bold">
-                <Time time={currentTime} />
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-    </main>
-  );
+  if (!photo || !currentTime) {
+    return <></>;
+  }
+  return <Tokei time={currentTime} photo={photo} />;
 }
