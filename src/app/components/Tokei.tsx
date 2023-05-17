@@ -24,7 +24,7 @@ export function Tokei({ time, photo }: Props) {
         </div>
         <div className="flex-none">
           {time && (
-            <div className="text-white text-8xl font-mono font-bold">
+            <div className="text-white text-4xl sm:text-6xl md:text-8xl font-mono font-bold">
               <Time time={time} />
             </div>
           )}
