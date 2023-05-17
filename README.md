@@ -39,7 +39,7 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000) with your browser.
 
-See [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+See [Next.js documentation](https://nextjs.org/docs/) for more details.
 
 ## ProTip!
 
