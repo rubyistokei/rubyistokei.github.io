@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import { FaCamera } from "react-icons/fa";
 
 import { Photo } from "./api/photos/route";
+import { useUpdateChecker } from "./hooks/use-update-checker";
 
 async function getPhotos() {
   const res = await fetch("/api/photos");
@@ -16,28 +17,6 @@ async function getPhotos() {
 type TokeiProps = {
   time: Date;
 };
-
-function useUpdateChecker(checkInterval: number) {
-  useEffect(() => {
-    if (process.env.NODE_ENV !== "production") return;
-
-    const timer = setInterval(() => {
-      const runningBuildId = process.env.NEXT_PUBLIC_BUILD_ID;
-
-      fetch(`/_next/static/${runningBuildId}/_buildManifest.js`, {
-        method: "HEAD",
-        cache: "no-store",
-      }).then((response) => {
-        if (response.status === 404) {
-          console.log(`build ${runningBuildId} is not found, reloading`);
-          location.reload();
-        }
-      });
-    }, checkInterval);
-
-    return () => clearInterval(timer);
-  }, [checkInterval]);
-}
 
 function Tokei({ time }: TokeiProps) {
   const [colonVisible, setColonVisible] = useState<boolean>(true);
