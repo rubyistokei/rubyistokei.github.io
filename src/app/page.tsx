@@ -24,11 +24,11 @@ type TokeiProps = {
 };
 
 function useUpdateChecker(checkInterval: number) {
-  if (process.env.NODE_ENV !== "production") return;
-
   const router = useRouter();
 
   useEffect(() => {
+    if (process.env.NODE_ENV !== "production") return;
+
     const timer = setInterval(() => {
       const runningBuildId = process.env.NEXT_PUBLIC_BUILD_ID;
 
