@@ -12,11 +12,11 @@ export function Tokei({ time, photo }: Props) {
     <main className="w-screen h-screen overflow-hidden bg-black relative">
       <img
         className="absolute top-0 left-0 w-full h-full object-contain z-10"
-        src={photo.url}
+        src={photo.image}
       ></img>
       <img
         className="w-full h-full object-cover blur-2xl z-0"
-        src={photo.url}
+        src={photo.image}
       ></img>
       <div className="absolute bottom-0 left-0 w-full text-white bg-black bg-opacity-50 p-4 z-20 flex items-end gap-4">
         <div className="grow">

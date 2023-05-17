@@ -4,7 +4,7 @@ import YAML from "yaml";
 
 export type Photo = {
   id: string;
-  url: string;
+  image: string;
   rubyists: string[] | undefined;
   taken_by: string | undefined;
   taken_at: string | undefined;

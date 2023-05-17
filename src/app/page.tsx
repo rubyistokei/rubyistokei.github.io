@@ -57,7 +57,7 @@ export default function Home() {
     if (photos.length === 0) return;
 
     const nextIndex = (photoIndex + 1) % photos.length;
-    prefetch(photos[nextIndex].url);
+    prefetch(photos[nextIndex].image);
   }, [photos, photoIndex]);
 
   const pinnedPhotoId = params.get("pin");
