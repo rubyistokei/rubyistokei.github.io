@@ -5,7 +5,7 @@ type Props = {
   time: Date;
 };
 
-export function Tokei({ time }: Props) {
+export function Time({ time }: Props) {
   const [colonVisible, setColonVisible] = useState<boolean>(true);
   useEffect(() => {
     const interval = setInterval(() => {

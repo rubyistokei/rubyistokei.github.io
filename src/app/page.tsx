@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { Photo } from "./api/photos/route";
 import { useUpdateChecker } from "./hooks/use-update-checker";
-import { Tokei } from "./components/Tokei";
+import { Time } from "./components/Time";
 import { Caption } from "./components/Caption";
 
 async function getPhotos() {
@@ -83,7 +83,7 @@ export default function Home() {
           <div className="flex-none">
             {currentTime && (
               <div className="text-white text-8xl font-mono font-bold">
-                <Tokei time={currentTime} />
+                <Time time={currentTime} />
               </div>
             )}
           </div>
