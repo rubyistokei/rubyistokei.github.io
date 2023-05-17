@@ -7,9 +7,7 @@ import { FaCamera } from "react-icons/fa";
 import { Photo } from "./api/photos/route";
 
 async function getPhotos() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/photos`
-  );
+  const res = await fetch("/api/photos");
   const data = await res.json();
 
   return data.photos;
@@ -26,15 +24,10 @@ function useUpdateChecker(checkInterval: number) {
     const timer = setInterval(() => {
       const runningBuildId = process.env.NEXT_PUBLIC_BUILD_ID;
 
-      fetch(
-        `${
-          process.env.NEXT_PUBLIC_BASE_PATH || ""
-        }/_next/static/${runningBuildId}/_buildManifest.js`,
-        {
-          method: "HEAD",
-          cache: "no-store",
-        }
-      ).then((response) => {
+      fetch(`/_next/static/${runningBuildId}/_buildManifest.js`, {
+        method: "HEAD",
+        cache: "no-store",
+      }).then((response) => {
         if (response.status === 404) {
           console.log(`build ${runningBuildId} is not found, reloading`);
           location.reload();
