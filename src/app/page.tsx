@@ -8,10 +8,7 @@ import { Photo } from "./api/photos/route";
 
 async function getPhotos() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/photos`,
-    {
-      next: { revalidate: 60 },
-    }
+    `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/photos`
   );
   const data = await res.json();
 
@@ -148,8 +145,9 @@ export default function Home() {
     if (photos.length === 0) return;
 
     const sec = currentTime?.getTime() / 1000;
+    const speed = Number(process.env.NEXT_PUBLIC_SPEED || 1.0);
 
-    const index = Math.floor(sec / PERIOD_SEC) % photos.length;
+    const index = Math.floor((sec / 60) * speed) % photos.length;
     setPhotoIndex(index);
   }, [photos, currentTime]);
 
@@ -169,10 +167,16 @@ export default function Home() {
   return (
     <main className="w-screen h-screen overflow-hidden bg-black relative">
       {photo && (
-        <img className="absolute top-0 left-0 w-full h-full object-contain z-10" src={photo.url}></img>
+        <img
+          className="absolute top-0 left-0 w-full h-full object-contain z-10"
+          src={photo.url}
+        ></img>
       )}
       {photo && (
-        <img className="w-full h-full object-cover blur-2xl z-0" src={photo.url}></img>
+        <img
+          className="w-full h-full object-cover blur-2xl z-0"
+          src={photo.url}
+        ></img>
       )}
       {currentTime && (
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white mix-blend-difference text-[100px] font-mono font-bold z-30">
