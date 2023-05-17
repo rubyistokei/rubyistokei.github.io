@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import { FaCamera } from "react-icons/fa";
 
 import { Photo } from "./api/photos/route";
+import { useRouter } from "next/router";
 
 async function getPhotos() {
   const res = await fetch(
@@ -21,6 +22,35 @@ async function getPhotos() {
 type TokeiProps = {
   time: Date;
 };
+
+function useUpdateChecker(checkInterval: number) {
+  if (process.env.NODE_ENV !== "production") return;
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const runningBuildId = process.env.NEXT_PUBLIC_BUILD_ID;
+
+      fetch(
+        `${
+          process.env.NEXT_PUBLIC_BASE_PATH || ""
+        }/_next/static/${runningBuildId}/_buildManifest.js`,
+        {
+          method: "HEAD",
+          cache: "no-store",
+        }
+      ).then((response) => {
+        if (response.status === 404) {
+          console.log(`build ${runningBuildId} is not found, reloading`);
+          router.reload();
+        }
+      });
+    }, checkInterval);
+
+    return () => clearInterval(timer);
+  }, []);
+}
 
 function Tokei({ time }: TokeiProps) {
   const [colonVisible, setColonVisible] = useState<boolean>(true);
@@ -97,6 +127,8 @@ export default function Home() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<Date>();
+
+  useUpdateChecker(1000 * 60);
 
   useEffect(() => {
     setCurrentTime(new Date());
