@@ -117,7 +117,6 @@ function Caption({ photo }: PhotoProps) {
 }
 
 export default function Home() {
-  const PERIOD_SEC = 10;
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<Date>();
