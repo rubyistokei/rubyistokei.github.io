@@ -162,7 +162,7 @@ export default function Home() {
 
     const nextIndex = (photoIndex + 1) % photos.length;
     prefetch(photos[nextIndex].url);
-  }, [photoIndex]);
+  }, [photos, photoIndex]);
 
   const photo = photos[photoIndex];
 
