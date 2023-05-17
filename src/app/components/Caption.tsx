@@ -1,4 +1,4 @@
-import { FaCamera } from "react-icons/fa";
+import { FaAt, FaCamera } from "react-icons/fa";
 import { Photo } from "../api/photos/route";
 
 type Props = {
@@ -24,31 +24,24 @@ export function Caption({ photo }: Props) {
     });
   }
 
-  const takenComponents = [];
-  if (photo.taken_by) {
-    takenComponents.push(
-      <span key="taken-by">
-        by <span className="font-bold">{photo.taken_by}</span>{" "}
-      </span>
-    );
-  }
-  if (photo.taken_at) {
-    takenComponents.push(
-      <span key="taken-at">
-        at <span className="font-bold">{photo.taken_at}</span>
-      </span>
-    );
-  }
-
   return (
     <>
       <div className="text-4xl">{personComponents}</div>
       {photo.description && <div className="text-xl">{photo.description}</div>}
-      {takenComponents.length > 0 && (
-        <div className="text-xl">
-          <FaCamera className="inline" /> {takenComponents}
-        </div>
-      )}
+      <div className="text-xl">
+        {photo.taken_by && (
+          <span className="mr-3">
+            <FaCamera className="inline mr-1" />
+            <span className="font-bold">{photo.taken_by}</span>
+          </span>
+        )}
+        {photo.taken_at && (
+          <span>
+            <FaAt className="inline mr-1" />
+            <span className="font-bold">{photo.taken_at}</span>
+          </span>
+        )}
+      </div>
     </>
   );
 }
