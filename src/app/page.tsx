@@ -1,40 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { format } from "date-fns";
 import { FaCamera } from "react-icons/fa";
 
 import { Photo } from "./api/photos/route";
 import { useUpdateChecker } from "./hooks/use-update-checker";
+import { Tokei } from "./components/Tokei";
 
 async function getPhotos() {
   const res = await fetch("/api/photos");
   const data = await res.json();
 
   return data.photos;
-}
-
-type TokeiProps = {
-  time: Date;
-};
-
-function Tokei({ time }: TokeiProps) {
-  const [colonVisible, setColonVisible] = useState<boolean>(true);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setColonVisible((prev) => !prev);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <>
-      {format(time, "HH")}
-      <span className={colonVisible ? "visible" : "invisible"}>:</span>
-      {format(time, "mm")}
-    </>
-  );
 }
 
 type PhotoProps = {
