@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Photo } from "./api/photos/route";
 import { useUpdateChecker } from "./hooks/use-update-checker";
 import { Tokei } from "./components/Tokei";
+import { useSearchParams } from "next/navigation";
 
 async function getPhotos() {
   const res = await fetch("/api/photos");
@@ -17,6 +18,7 @@ export default function Home() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<Date>();
+  const params = useSearchParams();
 
   useUpdateChecker(1000 * 60);
 
@@ -58,7 +60,11 @@ export default function Home() {
     prefetch(photos[nextIndex].url);
   }, [photos, photoIndex]);
 
-  const photo = photos[photoIndex];
+  const pinnedPhotoId = params.get("pin");
+  const pinnedPhoto =
+    pinnedPhotoId && photos.find((photo) => photo.id === pinnedPhotoId);
+
+  const photo = pinnedPhoto ? pinnedPhoto : photos[photoIndex];
 
   if (!photo || !currentTime) {
     return <></>;

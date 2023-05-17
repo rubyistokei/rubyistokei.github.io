@@ -8,7 +8,6 @@ Rubyistokei is a web application to show a clock of Rubyists, by Rubyists, for R
 
 Rubyistokei shows Rubyists every minute. We want to help Rubyists to know Rubyists each other by sight. So, we kindly ask you to add your Ruby friends to this project. Instruction follows.
 
-
 ## How to add Ruby friends?
 
 1. Obtain permissions from both of the Rubyist and the photographer (if you are not of them).
@@ -41,3 +40,7 @@ npm run dev
 Then open [http://localhost:3000](http://localhost:3000) with your browser.
 
 See [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## ProTip!
+
+If you want to pin a specific photo, use `pin` query parameter. For `data/matz.yaml`, use `http://localhost:3000/?pin=matz`. Useful for creating data.
