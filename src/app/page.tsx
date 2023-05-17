@@ -5,7 +5,6 @@ import { format } from "date-fns";
 import { FaCamera } from "react-icons/fa";
 
 import { Photo } from "./api/photos/route";
-import { useRouter } from "next/router";
 
 async function getPhotos() {
   const res = await fetch(
@@ -24,8 +23,6 @@ type TokeiProps = {
 };
 
 function useUpdateChecker(checkInterval: number) {
-  const router = useRouter();
-
   useEffect(() => {
     if (process.env.NODE_ENV !== "production") return;
 
@@ -43,13 +40,13 @@ function useUpdateChecker(checkInterval: number) {
       ).then((response) => {
         if (response.status === 404) {
           console.log(`build ${runningBuildId} is not found, reloading`);
-          router.reload();
+          location.reload();
         }
       });
     }, checkInterval);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [checkInterval]);
 }
 
 function Tokei({ time }: TokeiProps) {
