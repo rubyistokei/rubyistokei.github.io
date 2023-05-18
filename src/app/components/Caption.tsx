@@ -26,9 +26,11 @@ export function Caption({ photo }: Props) {
 
   return (
     <>
-      <div className="text-4xl">{personComponents}</div>
-      {photo.description && <div className="text-xl">{photo.description}</div>}
-      <div className="text-xl">
+      <div className="text-2xl sm:text-3xl md:text-4xl">{personComponents}</div>
+      {photo.description && (
+        <div className="text-md sm:text-lg md:text-xl">{photo.description}</div>
+      )}
+      <div className="text-md sm:text-xl">
         {photo.taken_by && (
           <span className="mr-3">
             <FaCamera className="inline mr-1" />
