@@ -8,7 +8,7 @@ export type Photo = {
   rubyists: string[] | undefined;
   taken_by: string | undefined;
   taken_at: string | undefined;
-  description: string | undefined;
+  bio: string | undefined;
 };
 
 export async function GET(request: Request) {

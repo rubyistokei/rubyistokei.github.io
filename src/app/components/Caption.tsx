@@ -27,8 +27,8 @@ export function Caption({ photo }: Props) {
   return (
     <>
       <div className="text-2xl sm:text-3xl md:text-4xl">{personComponents}</div>
-      {photo.description && (
-        <div className="text-md sm:text-lg md:text-xl">{photo.description}</div>
+      {photo.bio && (
+        <div className="text-md sm:text-lg md:text-xl">{photo.bio}</div>
       )}
       <div className="text-md sm:text-xl">
         {photo.taken_by && (
