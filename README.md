@@ -43,4 +43,5 @@ See [Next.js documentation](https://nextjs.org/docs/) for more details.
 
 ## ProTip!
 
-If you want to pin a specific photo, use `pin` query parameter. For `data/matz.yaml`, use `http://localhost:3000/?pin=matz`. Useful for creating data.
+* If you want to pin a specific photo, use `pin` query parameter. For `data/matz.yaml`, use `http://localhost:3000/?pin=matz`. Useful for creating data.
+* In development mode, the photos switches 10x faster for debugging purposes. This behavior can be controlled with the environment variable `NEXT_PUBLIC_SPEED`. The setting for development mode is located in `.env.development`.
