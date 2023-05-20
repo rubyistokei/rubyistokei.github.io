@@ -1,6 +1,6 @@
 image: "https://pbs.twimg.com/media/Fv-drPIakAEqoBL?format=jpg&name=large"
 rubyists:
-  - 'FjordBootCamp'
+  - "FjordBootCamp"
 taken_at: "RubyKaigi 2023 Day 3"
 taken_by: "y_komaco"
 description: "A programming school that produces many Rubyists"
